@@ -11,7 +11,6 @@ bool WeightInput(float a)
 }
 
 // If parameter is not true, test fails
-// This check function would be provided by the test framework
 #define IS_TRUE(x) { if (!(x)) std::cout << __FUNCTION__ << " failed on line " << __LINE__ << std::endl; }
 
 // Test for WeightInput
@@ -29,9 +28,7 @@ void test_WeightInputTest()
 }
 
 int main(void) {
-    // Call all tests. Using a test framework would simplify this.
+    // Call all tests
     test_WeightInputTest();
-    float test = pow(3.402823466, 38)+1;
-    cout<<"real";
     return 0;
 }
