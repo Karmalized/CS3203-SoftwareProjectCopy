@@ -6,7 +6,7 @@ using namespace std;
 // Function Placeholder
 bool gptCall(const vector<string>& nutritionalNeeds) 
 {
-    // Placeholder implementation
+    // Placeholder implementation 
     // Simulating that AI is called and providing a simple response for testing purposes
     for (const auto& need : nutritionalNeeds) {
         if (need.empty()) // Treat null input as false
