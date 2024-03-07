@@ -1,26 +1,41 @@
 #include <iostream>
+#include <vector>
 #include <cassert>
 using namespace std;
 
 // Function Placeholder
-bool gptCall(string nutritionalNeed) 
+bool gptCall(const vector<string>& nutritionalNeeds) 
 {
     // Placeholder implementation
     // Simulating that AI is called and providing a simple response for testing purposes
-    if (nutritionalNeed == "low calorie")
-        return true; // Assuming a meal suggestion is successful
-    else
-        return false; // Assuming no meal suggestion for other nutritional needs for now
+    for (const auto& need : nutritionalNeeds) {
+        if (need.empty()) // Treat null input as false
+            return false;
+        // Check if nutrient level is appropriate
+        if (need == "appropriate level")
+            return false;
+    }
+    // Return true if no null input or appropriate level found
+    return true;
 }
 
 // Mini-unit test for gptCall function
 void test_gptCall()
 {
     // Valid input
-    assert(gptCall("low calorie") == true);
+    assert(gptCall({"low calorie"}) == true);
     
     // Invalid input
-    assert(gptCall("high protein") == false);
+    assert(gptCall({"high protein"}) == false);
+
+    // Null input
+    assert(gptCall({}) == false);
+    
+    // Null input among other valid inputs
+    assert(gptCall({"low calorie", "high protein", ""}) == false);
+    
+    // Input with appropriate level
+    assert(gptCall({"appropriate level"}) == false);
     
     // Additional test cases can be added
 }
