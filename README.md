@@ -1,5 +1,5 @@
 # CalorieMinder
-CalorieMinder is an application to track caloric and nutrient intake. 
+## CalorieMinder is an application to track caloric and nutrient intake. 
 
 ActivityInput : 
 
