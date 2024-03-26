@@ -14,6 +14,8 @@ WeightInput:
 GPTCall: 
 GPTCall is when the user inputs a caloric deficiency/need into the GPT AI. In return, the AI will then return a meal suggestion to satisfy the user’s caloric needs. 
 
+BMI-Calculator Inputs: The integrated BMI/BMR Calculator will take measurements of an individuals current health status including (but not limited to): Age, Weight, Height, etc and factor those calculations to provide a health metric and daily caloric/nutrient consumption that should be considered by the CalorieMinder user.
+
 
 UpdateNutrientInfo:
 
