@@ -1,2 +1,2 @@
 # CalorieMinder
-Dysmorphia or Smthn
+CalorieMinder is an application to track caloric and nutrient intake. 
