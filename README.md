@@ -22,6 +22,6 @@ UpdateNutrientInfo: This method captures user input for nutrient information and
 
 
 
-dataInput:
+dataInput: This function is used to capture, validate, and store user data related to their daily nutrition intake and physical activity.
 
 activityInput: This function takes in int activityID and float duration and stores this data in the next available row of activities.csv. 
