@@ -12,7 +12,7 @@ WeightInput:
 
 
 GPTCall: 
-
+GPTCall is when the user inputs a caloric deficiency/need into the GPT AI. In return, the AI will then return a meal suggestion to satisfy the user’s caloric needs. 
 
 
 UpdateNutrientInfo:
