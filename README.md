@@ -5,7 +5,7 @@ ActivityInput :
 
 
 InitializeNutrient:
-
+This method takes user inputs of nutrition information and stores it in an array where each index corresponds to a specific nutrient.
 
 WeightInput:
 
