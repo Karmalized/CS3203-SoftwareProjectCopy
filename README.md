@@ -23,3 +23,5 @@ UpdateNutrientInfo:
 
 
 dataInput:
+
+activityInput: This function takes in int activityID and float duration and stores this data in the next available row of activities.csv. 
