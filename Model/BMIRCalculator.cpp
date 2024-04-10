@@ -1,9 +1,7 @@
-Men: BMR = 88.362 + (13.397 x weight in kg) + (4.799 x height in cm) – (5.677 x age in years)
-Women: BMR = 447.593 + (9.247 x weight in kg) + (3.098 x height in cm) – (4.330 x age in years)
-
 #include <iostream>
 using namespace std;
-
+//Men: BMR = 88.362 + (13.397 x weight in kg) + (4.799 x height in cm) – (5.677 x age in years) 
+//Women: BMR = 447.593 + (9.247 x weight in kg) + (3.098 x height in cm) – (4.330 x age in years)
 // Function to calculate BMR for men
 double calculateBMRMen(double weight, double height, int age) {
     return 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
