@@ -1,8 +1,12 @@
-//hi
 #include <iostream>
 using namespace std;
-//Men: BMR = 88.362 + (13.397 x weight in kg) + (4.799 x height in cm) – (5.677 x age in years) 
-//Women: BMR = 447.593 + (9.247 x weight in kg) + (3.098 x height in cm) – (4.330 x age in years)
+
+// Function to calculate BMI
+double calculateBMI(double weight, double height) {
+    double height_m = height / 100.0; // Convert height to meters
+    return weight / (height_m * height_m);
+}
+
 // Function to calculate BMR for men
 double calculateBMRMen(double weight, double height, int age) {
     return 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
@@ -20,7 +24,7 @@ int main() {
 
     // Prompt user for input
     cout << "Enter your weight in kilograms: ";
-    cin >> weight;
+    cin >> weight; 
 
     cout << "Enter your height in centimeters: ";
     cin >> height;
@@ -32,6 +36,10 @@ int main() {
     cin >> gender;
 
     double bmr;
+
+    // Calculate BMI
+    double bmi = calculateBMI(weight, height);
+    cout << "Your Body Mass Index (BMI) is: " << bmi << endl;
 
     // Calculate BMR based on gender
     if (gender == 'M' || gender == 'm') {
