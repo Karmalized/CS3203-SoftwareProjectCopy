@@ -42,8 +42,8 @@ void calculateMicronutrients(double calories) {
     cout << "- Vitamin D: 15 µg\n";
     cout << "- Vitamin E: 15 mg\n";
     cout << "- Vitamin K: 120 µg\n";
-    cout << "- Choline: 550 mg\n";
-    cout << "- Vitamin K: 120 µg\n";
+  
+   
 
     // Recommended intake of minerals
     cout << "\nRecommended intake of minerals:\n";
@@ -53,24 +53,10 @@ void calculateMicronutrients(double calories) {
     cout << "- Iron: 8 mg\n";
     cout << "- Zinc: 11 mg\n";
     cout << "- Copper: 900 µg\n";
-    cout << "- Manganese: 2.3 mg\n";
-    cout << "- Selenium: 55 µg\n";
-    cout << "- Chromium: 35 µg\n";
-    cout << "- Molybdenum: 45 µg\n";
-    cout << "- Iodine: 150 µg\n";
     cout << "- Potassium: 4700 mg\n";
     cout << "- Sodium: 1500 mg\n";
     cout << "- Chloride: 2300 mg\n";
-    cout << "- Fluoride: 3.4 mg\n";
-
-    // Recommended intake of non-essential minerals
-    cout << "\nRecommended intake of non-essential minerals:\n";
-    cout << "- Silicon: 20-50 mg\n";
-    cout << "- Boron: 1-13 mg\n";
-    cout << "- Vanadium: 10-20 µg\n";
-    cout << "- Nickel: 0.3-0.5 mg\n";
-    cout << "- Cobalt: 5 µg\n";
-    cout << "- Aluminum: 0.6-10 mg\n";
+    
 }
 
 int main() {
@@ -106,4 +92,3 @@ int main() {
 
     return 0;
 }
-
