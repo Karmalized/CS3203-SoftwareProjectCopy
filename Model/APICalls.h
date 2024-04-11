@@ -8,9 +8,6 @@ float* getMicrosMacOS(int FDCID) {
     //execute the curl command in console
     system(command.c_str());
     //get the response from the api
-    string response;
-    cin >> response;
-    cout << response << endl;
     float* x;
     return x;
 }
