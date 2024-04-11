@@ -36,8 +36,13 @@ By using CalorieMinder, you agree to our Terms of Service. Please read these ter
 
 ## Current Progress
 **Java Integration for App Optimization**
+
 buildNutrientFile.java: Adapts input2txt.cpp into an optimized Java environment with functions taking system input for nutrients and building upon values until a full day has elapsed (and the file information is exported into a database)
+
 Water.java: Adapts Water.h into an optimized Java environment using functions that keeps track of water consumption and the total amount of intake from the user against recommended values
+
 BMI/BMRCalculator.java & DeficiencyCalculator.java: adapts the cpp files of the same name in a java environment
+
 Micros.java: function call to USDA database of vitamins and their levels onto a nutrientMap
+
 USDAapi.java: API calls to the USDA database
