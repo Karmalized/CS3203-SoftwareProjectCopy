@@ -9,7 +9,7 @@ Install and use your University of Oklahoma email to authenticate that you're a 
 Check out this link for an explanation:
 https://stackoverflow.com/questions/2505096/clone-a-private-repository-github
 You will have to make a personal access token and use it to clone the repository onto your computer.
-The command is git clone https://<pat>@github.com/<your account or organization>/<repo>.git
+The command is git clone **https://<pat>@github.com/<your account or organization>/<repo>.git**
 Make sure in the terminal that you are located in the file path that you want the repository to be saved in when you type this command!
 
 ## 3: Open the project in IntelliJ
