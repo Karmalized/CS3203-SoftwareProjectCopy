@@ -17,7 +17,7 @@ Once you are logged in to Intellij, from the home screen you should be able to o
 
 ## 4: Compile using Maven
 click the dropdown at the top for Run/Debug Configurations and select "Edit Configurations"
-  > It probably says something like "Current File" when you first look at it
+  > It probably says something like "Current File" when you first look at it.
 Add a new configuration and use Maven.
 On the command line, you should have javafx:run
 Under Maven Options and Java Options, you can inherit from settings, but make sure that you are using SDK 22.
