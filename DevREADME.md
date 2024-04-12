@@ -22,15 +22,15 @@ Add a new configuration and use Maven.
 On the command line, you should have javafx:run
 Under Maven Options and Java Options, you can inherit from settings, but make sure that you are using SDK 22.
 If it says something other than that, apply your changes
-  > go to File > Project Structure > SDKs.
-  > Then click the "+" and Download JDK to get Version 22.
+   go to File  Project Structure > SDKs.
+   Then click the "+" and Download JDK to get Version 22.
 
 Once you have ensured that the run command is correct and the JDK version is correct, click the Run/Debug dropdown again and run CalorieMinder [javafx:run]
 
-##6 run the GUI or any other application
+## 5: run the GUI or any other application
 Once the compiler has successfully run and does not return any errors, you are good to run any file with a "Main" function as an application.
 
-##7 Committing and Pushing changes
+## 6: Committing and Pushing changes
 Try not significantly change file structures without consulting the group first.
 To commit changes, just click the second option on the left that looks like a line with a circle in the middle
 Give your commit a message, and click "commit"
