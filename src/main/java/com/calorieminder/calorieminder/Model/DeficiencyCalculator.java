@@ -25,6 +25,7 @@ public class DeficiencyCalculator {
         return tdee;
     }
 
+    //TODO return these values
     // Function to calculate the recommended intake of macronutrients
     void calculateMacronutrients(double calories) {
         // Assuming macronutrient distribution percentages
