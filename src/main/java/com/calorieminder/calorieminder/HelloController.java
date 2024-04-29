@@ -30,5 +30,5 @@ public class HelloController {
 
     //Possible transition function to cater to all pages rather than make multiple methods for one
     //protected void transitionToPage (ActionEvent event, String fxmlLink) throws IO Exception {}
-    //I'm having push issues
+    //I'm having push
 }
