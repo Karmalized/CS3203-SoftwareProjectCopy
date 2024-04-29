@@ -10,17 +10,17 @@
    <children>
       <ButtonBar layoutX="11.0" layoutY="318.0" prefHeight="40.0" prefWidth="78.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Weight" />
+          <Button mnemonicParsing="false" onAction="#moveToWeightTrendPage" text="Weight" />
         </buttons>
       </ButtonBar>
       <ButtonBar layoutX="494.0" layoutY="20.0" prefHeight="40.0" prefWidth="85.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Food" />
+          <Button mnemonicParsing="false" onAction="#moveToFoodPage" text="Food" />
         </buttons>
       </ButtonBar>
       <ButtonBar layoutX="494.0" layoutY="60.0" prefHeight="40.0" prefWidth="85.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Water" />
+          <Button mnemonicParsing="false" onAction="#moveToWaterPage" text="Water" />
         </buttons>
       </ButtonBar>
       <ButtonBar layoutX="494.0" layoutY="298.0" prefHeight="40.0" prefWidth="78.0">
@@ -30,7 +30,7 @@
       </ButtonBar>
       <ButtonBar layoutX="494.0" layoutY="338.0" prefHeight="40.0" prefWidth="78.0">
         <buttons>
-          <Button mnemonicParsing="false" text="New Day" />
+          <Button mnemonicParsing="false" onAction="#moveToNewDayPage" text="New Day" />
         </buttons>
       </ButtonBar>
       <Text layoutX="19.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Protein:" wrappingWidth="61.98307228088379" />
