@@ -12,11 +12,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane prefHeight="470.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane prefHeight="470.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calorieminder.calorieminder.HelloController">
    <children>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
-            <Button fx:id="Welcome_Continue_Button" layoutX="552.0" layoutY="379.0" mnemonicParsing="false" text="Continue">
+            <Button fx:id="Welcome_Continue_Button" layoutX="552.0" layoutY="379.0" mnemonicParsing="false" onAction="#moveToMainPage" text="Continue">
                <effect>
                   <Blend />
                </effect></Button>

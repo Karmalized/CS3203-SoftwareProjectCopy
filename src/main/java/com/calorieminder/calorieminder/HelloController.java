@@ -21,8 +21,8 @@ public class HelloController {
 
     @FXML
     protected void moveToMainPage(ActionEvent event) throws IOException {
-        FXMLLoader main = new FXMLLoader(getClass().getResource("CalorieMinderIntroPage.fxml"));
-        Scene scene = new Scene(main.load(), 320, 240);
+        FXMLLoader main = new FXMLLoader(getClass().getResource("macrosFrame.fxml"));
+        Scene scene = new Scene(main.load(), 600, 400);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
