@@ -28,6 +28,14 @@ public class HelloController {
         currentWindow.show();
     }
 
+    @FXML
+    protected void moveToMicrosPage(ActionEvent event) throws IOException {
+        FXMLLoader main = new FXMLLoader(getClass().getResource("microsFrame.fxml"));
+        Scene scene = new Scene(main.load(), 600, 400);
+        Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+        currentWindow.setScene(scene);
+        currentWindow.show();
+    }
     //Possible transition function to cater to all pages rather than make multiple methods for one
     //protected void transitionToPage (ActionEvent event, String fxmlLink) throws IO Exception {}
 }
