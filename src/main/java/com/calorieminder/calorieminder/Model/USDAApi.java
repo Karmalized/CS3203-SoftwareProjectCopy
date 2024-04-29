@@ -34,10 +34,10 @@ public class USDAApi {
         return new Micros();
     }
 
-    /* //FOR TESTING
+     //FOR TESTING
     public static void main(String[] args) {
         USDAApi api = new USDAApi();
         api.searchForFoodById(2262074);
     }
-    */
+
 }
