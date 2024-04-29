@@ -1,51 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calorieminder.calorieminder.HelloController">
    <children>
-      <ButtonBar layoutX="-111.0" layoutY="318.0" prefHeight="40.0" prefWidth="200.0">
+      <ButtonBar layoutX="11.0" layoutY="318.0" prefHeight="40.0" prefWidth="78.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Weight" />
+          <Button mnemonicParsing="false" onAction="#moveToWeightTrendPage" text="Weight" />
         </buttons>
       </ButtonBar>
-      <ButtonBar layoutX="379.0" layoutY="20.0" prefHeight="40.0" prefWidth="200.0">
+      <ButtonBar layoutX="494.0" layoutY="20.0" prefHeight="40.0" prefWidth="85.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Food" />
+          <Button mnemonicParsing="false" onAction="#moveToFoodPage" text="Food" />
         </buttons>
       </ButtonBar>
-      <ButtonBar layoutX="379.0" layoutY="60.0" prefHeight="40.0" prefWidth="200.0">
+      <ButtonBar layoutX="494.0" layoutY="60.0" prefHeight="40.0" prefWidth="85.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Water" />
+          <Button mnemonicParsing="false" onAction="#moveToWaterPage" text="Water" />
         </buttons>
       </ButtonBar>
-      <ButtonBar layoutX="372.0" layoutY="298.0" prefHeight="40.0" prefWidth="200.0">
+      <ButtonBar layoutX="494.0" layoutY="298.0" prefHeight="40.0" prefWidth="78.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Micros" />
+          <Button mnemonicParsing="false" onAction="#moveToMicrosPage" text="Micros" />
         </buttons>
       </ButtonBar>
-      <ButtonBar layoutX="372.0" layoutY="338.0" prefHeight="40.0" prefWidth="200.0">
+      <ButtonBar layoutX="494.0" layoutY="338.0" prefHeight="40.0" prefWidth="78.0">
         <buttons>
-          <Button mnemonicParsing="false" text="New Day" />
+          <Button mnemonicParsing="false" onAction="#moveToNewDayPage" text="New Day" />
         </buttons>
       </ButtonBar>
-      <ProgressBar layoutX="114.0" layoutY="116.0" prefWidth="200.0" progress="0.0" />
-
-      <TextField layoutX="21.0" layoutY="27.0" prefHeight="26.0" prefWidth="38.0" text="BMI:" />
-      <TextField layoutX="21.0" layoutY="67.0" prefHeight="26.0" prefWidth="44.0" text="BMR:" />
-      <TextField layoutX="13.0" layoutY="113.0" prefHeight="26.0" prefWidth="78.0" text="Water Left:" />
-      <TextField alignment="CENTER" layoutX="279.0" layoutY="7.0" prefHeight="26.0" prefWidth="70.0" text="MACROS">
+      <Text layoutX="19.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Protein:" wrappingWidth="61.98307228088379" />
+      <Text layoutX="19.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carbs:" wrappingWidth="61.98307228088379" />
+      <Text layoutX="19.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fat:" wrappingWidth="61.98307228088379" />
+      <Text layoutX="19.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMI:" wrappingWidth="61.98307228088379" />
+      <Text layoutX="19.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMR:" wrappingWidth="61.98307228088379" />
+      <Text layoutX="19.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Left:" wrappingWidth="101.98307228088379" />
+      <Text layoutX="229.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MACROS" wrappingWidth="142.9830722808838">
          <font>
-            <Font size="36.0" />
+            <Font size="35.0" />
          </font>
-      </TextField>
-       <Button layoutX="300.0" layoutY="361.0" mnemonicParsing="false" onAction="#moveToMainPage" text="Back" />
+      </Text>
    </children>
 </Pane>
