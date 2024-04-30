@@ -7,13 +7,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class weightTrendFrame extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(weightTrendFrame.class.getResource("WeightTrend.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-    }
+public class weightTrendFrame extends HelloController {
+
 }
