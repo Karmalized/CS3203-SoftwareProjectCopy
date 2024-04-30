@@ -32,12 +32,12 @@ public class User {
 
 
     //Macronutrient intake of the User
-    private double proteinGrams = 0;
-    private double fatGrams = 0;
-    private double  carbGrams = 0;
+    private double proteinGrams ;
+    private double fatGrams;
+    private double  carbGrams;
 
     //water intake of the user in milliliters
-    private double waterML = 0;
+    private double waterML;
 
     //Empty Constructor
     public User() {

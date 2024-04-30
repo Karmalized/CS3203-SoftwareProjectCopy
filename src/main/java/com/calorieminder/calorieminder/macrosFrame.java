@@ -59,11 +59,11 @@ public class macrosFrame extends HelloController {
     @FXML
     private void initialize() {
         DecimalFormat df = new DecimalFormat("#.##");
-        DecimalFormat df2 = new DecimalFormat("#.###");
+        DecimalFormat df2 = new DecimalFormat("##.##");
     Protein.setText("Protein: " + df.format(user.getProteinGrams()) + " g");
     Carbs.setText("Carbs: " + df.format(user.getCarbGrams()) + " g");
     Fat.setText("Fat: " + df.format(user.getFatGrams()) + " g");
-    BMI.setText("BMI: " + String.valueOf(df.format(BMIRCalculator.calculateBMI(user.getHeight()*0.0254,user.getWeight()))));
+    BMI.setText("BMI: " + df2.format(BMIRCalculator.calculateBMI(user.getWeight()*0.453592,user.getHeight())*0.0254));
 
     }
 
