@@ -1,4 +1,8 @@
 package com.calorieminder.calorieminder.Model;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.LocalDateTime.*;
+import java.text.DateFormat;
 
 //This class stores all relevant user data for the app (in the scope of 1 day)
 public class User {
@@ -47,9 +51,19 @@ public class User {
         return Birthday;
     }
 //NOTE: THIS GETTER WILL CONVERT BIRTHDAY INTO AN ACTUAL AGE AMOUNT FOR MANIPULATION FROM THE CALCULATORS
-//    public int getAge(){
-//
-//    }
+    public double getAge(){
+        LocalDateTime currentSystemTime = LocalDateTime.now();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = dateFormat.format(currentSystemTime);
+        int[] currentTime = new int[3];
+        String[] currentTimeText = formattedDate.split("-");
+        currentTime[0] = Integer.parseInt(currentTimeText[0]);
+        currentTime[1] = Integer.parseInt(currentTimeText[1]);
+        currentTime[2] = Integer.parseInt(currentTimeText[2]);
+        int ageDays = ((currentTime[0]-Birthday[0]) * 365) + Math.abs((currentTime[1]-Birthday[1])* 30) + Math.abs((currentTime[2]-Birthday[2]));
+        double ageYears = ageDays / 365;
+        return ageYears;
+    }
 
     public void setWeight(double weight) {
         this.weight = weight;

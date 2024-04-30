@@ -77,7 +77,8 @@ public class  welcomeFrame extends HelloController {
     }
 
     @FXML
-    void onIntroPageLeave(ActionEvent event) throws IOException {
+    //NOTE: Front Page Not Taking Any Values
+    public void onMoveToMainPage(ActionEvent event) throws IOException {
 
         //Save data currently on intro page
         //Weight
@@ -101,7 +102,7 @@ public class  welcomeFrame extends HelloController {
         //Activity
         String activityString = activity.getValue();
         int activityInt = Integer.parseInt(activityString);
-
+        System.out.println(activityInt);
         //Sex
         String sexString = sex.getValue();
         char sexChar = sexString.charAt(0);
@@ -115,13 +116,12 @@ public class  welcomeFrame extends HelloController {
         newUser.setSex(sexChar);
 
         DeficiencyCalculator newUserCalc = new DeficiencyCalculator();
-        newUserCalc.calculateTDEE(newUser.getWeight(), newUser.getHeight(), /*newUser.getBirthday() == NEEDS CONVERSION*/, newUser.getSex(), newUser.getActivityLevel());
-    }
-
-    @Override //SUPERCLASS CALL FOR TRANSITIONS
-    protected void moveToMainPage(ActionEvent event) throws IOException {
-        macrosFrame newFrame = new macrosFrame();
-        newFrame.addInfo(user, deficiencyCalculator);
+        newUserCalc.calculateTDEE(newUser.getWeight(), newUser.getHeight(), newUser.getAge(), newUser.getSex(), newUser.getActivityLevel());
         super.moveToMainPage(event);
     }
+
+//    @Override //SUPERCLASS CALL FOR TRANSITIONS
+//    protected void moveToMainPage(ActionEvent event) throws IOException {
+//        super.moveToMainPage(event);
+//    }
 }

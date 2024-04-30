@@ -79,7 +79,7 @@ public class microsFrame extends HelloController {
     protected void moveToMainPage(ActionEvent event) throws IOException {
         super.moveToMainPage(event);
     }
-
+    //NOTE: THIS FUNCTION IS TO BE CALLED WHEN THE ADD BUTTON OF THE FOOD SEARCH PAGE IS PRESSED
     protected void updateInfo(User user){
         Micros currentIntake = user.getMicronutrientData(); //This Micros section references the current cumulative micronutrient intake of the individual (IT WILL BE COMPARED TO THE RECOMMENDED DAILY INTAKE)
         String[] Alist = A.getText().split(":");

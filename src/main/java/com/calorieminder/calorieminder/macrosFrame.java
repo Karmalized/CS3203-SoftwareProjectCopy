@@ -1,5 +1,6 @@
 package com.calorieminder.calorieminder;
 
+import com.calorieminder.calorieminder.Model.BMIRCalculator;
 import com.calorieminder.calorieminder.Model.DeficiencyCalculator;
 import com.calorieminder.calorieminder.Model.User;
 import javafx.application.Application;
@@ -10,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.lang.model.type.NullType;
 import java.io.IOException;
 
 public class macrosFrame extends HelloController {
@@ -39,8 +41,6 @@ public class macrosFrame extends HelloController {
     @Override
     protected void moveToMicrosPage(ActionEvent event) throws IOException {
         super.moveToMicrosPage(event);
-        microsFrame microFrame = new microsFrame();
-        microFrame.updateInfo(user);
     }
 
     @Override
@@ -57,7 +57,24 @@ public class macrosFrame extends HelloController {
     protected void moveToWeightTrendPage(ActionEvent event) throws IOException {
         super.moveToWeightTrendPage(event);
     }
+
+    public void presetBMIR(User user){
+        // Calculate BMI using BMIRCalculator
+        BMIRCalculator bmirCalculator = new BMIRCalculator();
+        String bmi = BMI.getText();
+        String bmr = BMR.getText();
+        BMI.setText(bmi + bmirCalculator.calculateBMI(user.getWeight(), user.getHeight()));
+        System.out.println(bmi + bmirCalculator.calculateBMI(user.getWeight(), user.getHeight()));
+        // Calculate BMR using BMIRCalculator
+         if (user.getSex() == 'M' || user.getSex() == 'm') {
+             BMR.setText(bmr + bmirCalculator.calculateBMRMen(user.getWeight(), user.getHeight(), user.getAge()));
+          } else {
+             BMR.setText(bmr + bmirCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge()));
+         }
+    }
+
     //NOTE: USER CLASS IN THIS FUNCTION TBD (Probably going to be replaced with a Macros File)
+    //THIS CLASS WILL BE USED IN TANDEM WHEN THE ADD BUTTON FUNCTION IS IMPLEMENTED
     public void addInfo(User user, DeficiencyCalculator deficiencyCalculator){
         this.user = user;
         this.deficiencyCalculator = deficiencyCalculator;
