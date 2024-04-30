@@ -1,79 +1,54 @@
 package com.calorieminder.calorieminder;
 
-import com.calorieminder.calorieminder.Model.Micros;
 import com.calorieminder.calorieminder.Model.User;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 
-public class microsFrame extends HelloController {
+ public class microsFrame extends HelloController {
     //NUTRIENT TEXT VARIABLES
     @FXML
-    private Text A;
-    private double DailyA;
+     private Label vitaminALabel;
     @FXML
-    private Text B1;
-    private double DailyB1;
+     private Label vitaminB1Label;
     @FXML
-    private Text B2;
-    private double DailyB2;
+     private Label vitaminB2Label ;
     @FXML
-    private Text B3;
-    private double DailyB3;
+     private Label vitaminB3Label;
     @FXML
-    private Text B5;
-    private double DailyB5;
+     private Label vitaminB5Label  ;
     @FXML
-    private Text B6;
-    private double DailyB6;
+     private Label vitaminB6Label  ;
     @FXML
-    private Text B9;
-    private double DailyB9;
+     private Label vitaminB9Label  ;
     @FXML
-    private Text B12;
-    private double DailyB12;
+     private Label vitaminB12Label  ;
     @FXML
-    private Text C;
-    private double DailyC;
+     private Label vitaminCLabel;
     @FXML
-    private Text D;
-    private double DailyD;
+     private Label vitaminDLabel  ;
     @FXML
-    private Text E;
-    private double DailyE;
+     private Label vitaminELabel  ;
     @FXML
-    private Text K;
-    private double DailyK;
+     private Label vitaminKLabel  ;
     @FXML
-    private Text Calcium;
-    private double DailyCalcium;
+     private Label calciumLabel  ;
     @FXML
-    private Text Phosphorus;
-    private double DailyPhosphorus;
+     private Label phosphorusLabel  ;
     @FXML
-    private Text Magnesium;
-    private double DailyMagnesium;
+     private Label magnesiumLabel  ;
     @FXML
-    private Text Iron;
-    private double DailyIron;
+     private Label ironLabel ;
     @FXML
-    private Text Zinc;
-    private double DailyZinc;
+     private Label zincLabel ;
     @FXML
-    private Text Copper;
-    private double DailyCopper;
+     private Label copperLabel;
     @FXML
-    private Text Potassium;
-    private double DailyPotassium;
+     private Label potassiumLabel ;
     @FXML
-    private Text Sodium;
-    private double DailySodium;
+     private Label sodiumLabel ;
 
     @Override //SUPERCLASS CALL FOR TRANSITIONS
     protected void moveToMainPage(ActionEvent event) throws IOException {
@@ -81,68 +56,50 @@ public class microsFrame extends HelloController {
     }
     //NOTE: THIS FUNCTION IS TO BE CALLED WHEN THE ADD BUTTON OF THE FOOD SEARCH PAGE IS PRESSED
     protected void updateInfo(User user){
-        Micros currentIntake = user.getMicronutrientData(); //This Micros section references the current cumulative micronutrient intake of the individual (IT WILL BE COMPARED TO THE RECOMMENDED DAILY INTAKE)
-        String[] Alist = A.getText().split(":");
-        String[] B1list = B1.getText().split(":");
-        String[] B2list = B2.getText().split(":");
-        String[] B3list = B3.getText().split(":");
-        String[] B5list = B5.getText().split(":");
-        String[] B6list = B6.getText().split(":");
-        String[] B9list = B9.getText().split(":");
-        String[] B12list = B12.getText().split(":");
-        String[] Clist = C.getText().split(":");
-        String[] Dlist = D.getText().split(":");
-        String[] Elist = E.getText().split(":");
-        String[] Klist = K.getText().split(":");
-        String[] Calciumlist = Calcium.getText().split(":");
-        String[] Phosphoruslist = Phosphorus.getText().split(":");
-        String[] Magnesiumlist = Magnesium.getText().split(":");
-        String[] Ironlist = Iron.getText().split(":");
-        String[] Zinclist = Zinc.getText().split(":");
-        String[] Copperlist = Copper.getText().split(":");
-        String[] Potassiumlist = Potassium.getText().split(":");
-        String[] Sodiumlist = Sodium.getText().split(":");
 
-        double ARatio = (currentIntake.getVitaminA()/currentIntake.getDailyGoal().get("vitaminA")) * 100;
-        double B1Ratio = (currentIntake.getVitaminB1()/currentIntake.getDailyGoal().get("vitaminB1")) * 100;
-        double B2Ratio = (currentIntake.getVitaminB2()/currentIntake.getDailyGoal().get("vitaminB2")) * 100;
-        double B3Ratio = (currentIntake.getVitaminB3()/currentIntake.getDailyGoal().get("vitaminB3")) * 100;
-        double B5Ratio = (currentIntake.getVitaminB5()/currentIntake.getDailyGoal().get("vitaminB5")) * 100;
-        double B6Ratio = (currentIntake.getVitaminB6()/currentIntake.getDailyGoal().get("vitaminB6")) * 100;
-        double B9Ratio = (currentIntake.getVitaminB9()/currentIntake.getDailyGoal().get("vitaminB9")) * 100;
-        double B12Ratio = (currentIntake.getVitaminB12()/currentIntake.getDailyGoal().get("vitaminB12")) * 100;
-        double CRatio = (currentIntake.getVitaminC()/currentIntake.getDailyGoal().get("vitaminC")) * 100;
-        double DRatio = (currentIntake.getVitaminD()/currentIntake.getDailyGoal().get("vitaminD")) * 100;
-        double ERatio = (currentIntake.getVitaminE()/currentIntake.getDailyGoal().get("vitaminE")) * 100;
-        double KRatio = (currentIntake.getVitaminK()/currentIntake.getDailyGoal().get("vitaminK")) * 100;
-        double CalciumRatio = (currentIntake.getCalcium()/currentIntake.getDailyGoal().get("Calcium")) * 100;
-        double PhosphorusRatio = (currentIntake.getPhosphorus()/currentIntake.getDailyGoal().get("Phosphorus")) * 100;
-        double MagnesiumRatio = (currentIntake.getMagnesium()/currentIntake.getDailyGoal().get("Magnesium")) * 100;
-        double IronRatio = (currentIntake.getIron()/currentIntake.getDailyGoal().get("Iron")) * 100;
-        double ZincRatio = (currentIntake.getZinc()/currentIntake.getDailyGoal().get("Zinc")) * 100;
-        double CopperRatio = (currentIntake.getCopper()/currentIntake.getDailyGoal().get("Copper")) * 100;
-        double PotassiumRatio = (currentIntake.getPotassium()/currentIntake.getDailyGoal().get("Potassium")) * 100;
-        double SodiumRatio = (currentIntake.getSodium()/currentIntake.getDailyGoal().get("Sodium")) * 100;
 
-        A.setText(Alist[0] + ": " + currentIntake.getVitaminA() +  ", Percent Daily: " + ARatio + "%");
-        B1.setText(B1list[0] + ": " + currentIntake.getVitaminB1() +  ", Percent Daily: " + B1Ratio + "%");
-        B2.setText(B2list[0] + ": " + currentIntake.getVitaminB2() +  ", Percent Daily: " + B2Ratio + "%");
-        B3.setText(B3list[0] + ": " + currentIntake.getVitaminB3() +  ", Percent Daily: " + B3Ratio + "%");
-        B5.setText(B5list[0] + ": " + currentIntake.getVitaminB5() +  ", Percent Daily: " + B5Ratio + "%");
-        B6.setText(B6list[0] + ": " + currentIntake.getVitaminB6() +  ", Percent Daily: " + B6Ratio + "%");
-        B9.setText(B9list[0] + ": " + currentIntake.getVitaminB9() +  ", Percent Daily: " + B9Ratio + "%");
-        B12.setText(B12list[0] + ": " + currentIntake.getVitaminB12() +  ", Percent Daily: " + B12Ratio + "%");
-        C.setText(Clist[0] + ": " + currentIntake.getVitaminC() +  ", Percent Daily: " + CRatio + "%");
-        D.setText(Dlist[0] + ": " + currentIntake.getVitaminD() +  ", Percent Daily: " + DRatio + "%");
-        E.setText(Elist[0] + ": " + currentIntake.getVitaminE() +  ", Percent Daily: " + ERatio + "%");
-        K.setText(Klist[0] + ": " + currentIntake.getVitaminK() +  ", Percent Daily: " + KRatio + "%");
-        Calcium.setText(Calciumlist[0] + ": " + currentIntake.getCalcium() + ", Percent Daily: " + CalciumRatio + "%");
-        Phosphorus.setText(Phosphoruslist[0] + ": " + currentIntake.getPhosphorus() +  ", Percent Daily: " + PhosphorusRatio + "%");
-        Magnesium.setText(Magnesiumlist[0] + ": " + currentIntake.getMagnesium() +  ", Percent Daily: " + MagnesiumRatio + "%");
-        Iron.setText(Ironlist[0] + ": " + currentIntake.getIron() +  ", Percent Daily: " + IronRatio + "%");
-        Zinc.setText(Zinclist[0] + ": " + currentIntake.getZinc() +  ", Percent Daily: " + ZincRatio + "%");
-        Copper.setText(Copperlist[0] + ": " + currentIntake.getCopper() +  ", Percent Daily: " + CopperRatio + "%");
-        Potassium.setText(Potassiumlist[0] + ": " + currentIntake.getPotassium() + ", Percent Daily: " + PotassiumRatio + "%");
-        Sodium.setText(Sodiumlist[0] + ": " + currentIntake.getSodium() +  ", Percent Daily: " + SodiumRatio + "%");
+        double ARatio = (user.getMicronutrientData().getVitaminA()/user.getMicronutrientData().getDailyGoal().get("vitaminA")) * 100;
+        double B1Ratio = (user.getMicronutrientData().getVitaminB1()/user.getMicronutrientData().getDailyGoal().get("vitaminB1")) * 100;
+        double B2Ratio = (user.getMicronutrientData().getVitaminB2()/user.getMicronutrientData().getDailyGoal().get("vitaminB2")) * 100;
+        double B3Ratio = (user.getMicronutrientData().getVitaminB3()/user.getMicronutrientData().getDailyGoal().get("vitaminB3")) * 100;
+        double B5Ratio = (user.getMicronutrientData().getVitaminB5()/user.getMicronutrientData().getDailyGoal().get("vitaminB5")) * 100;
+        double B6Ratio = (user.getMicronutrientData().getVitaminB6()/user.getMicronutrientData().getDailyGoal().get("vitaminB6")) * 100;
+        double B9Ratio = (user.getMicronutrientData().getVitaminB9()/user.getMicronutrientData().getDailyGoal().get("vitaminB9")) * 100;
+        double B12Ratio = (user.getMicronutrientData().getVitaminB12()/user.getMicronutrientData().getDailyGoal().get("vitaminB12")) * 100;
+        double CRatio = (user.getMicronutrientData().getVitaminC()/user.getMicronutrientData().getDailyGoal().get("vitaminC")) * 100;
+        double DRatio = (user.getMicronutrientData().getVitaminD()/user.getMicronutrientData().getDailyGoal().get("vitaminD")) * 100;
+        double ERatio = (user.getMicronutrientData().getVitaminE()/user.getMicronutrientData().getDailyGoal().get("vitaminE")) * 100;
+        double KRatio = (user.getMicronutrientData().getVitaminK()/user.getMicronutrientData().getDailyGoal().get("vitaminK")) * 100;
+        double CalciumRatio = (user.getMicronutrientData().getCalcium()/user.getMicronutrientData().getDailyGoal().get("calcium")) * 100;
+        double PhosphorusRatio = (user.getMicronutrientData().getPhosphorus()/user.getMicronutrientData().getDailyGoal().get("phosphorus")) * 100;
+        double MagnesiumRatio = (user.getMicronutrientData().getMagnesium()/user.getMicronutrientData().getDailyGoal().get("magnesium")) * 100;
+        double IronRatio = (user.getMicronutrientData().getIron()/user.getMicronutrientData().getDailyGoal().get("iron")) * 100;
+        double ZincRatio = (user.getMicronutrientData().getZinc()/user.getMicronutrientData().getDailyGoal().get("zinc")) * 100;
+        double CopperRatio = (user.getMicronutrientData().getCopper()/user.getMicronutrientData().getDailyGoal().get("copper")) * 100;
+        double PotassiumRatio = (user.getMicronutrientData().getPotassium()/user.getMicronutrientData().getDailyGoal().get("potassium")) * 100;
+        double SodiumRatio = (user.getMicronutrientData().getSodium()/user.getMicronutrientData().getDailyGoal().get("sodium")) * 100;
+
+        vitaminALabel.setText(ARatio + "% Daily Value");
+        vitaminB1Label.setText(B1Ratio + "% Daily Value");
+        vitaminB2Label.setText(B2Ratio + "% Daily Value");
+        vitaminB3Label.setText(B3Ratio + "% Daily Value");
+        vitaminB5Label.setText(B5Ratio + "% Daily Value");
+        vitaminB6Label.setText(B6Ratio + "% Daily Value");
+        vitaminB9Label.setText(B9Ratio + "% Daily Value");
+        vitaminB12Label.setText(B12Ratio + "% Daily Value");
+        vitaminCLabel.setText(CRatio + "% Daily Value");
+        vitaminDLabel.setText(DRatio + "% Daily Value");
+        vitaminELabel.setText(ERatio + "% Daily Value");
+        vitaminKLabel.setText(KRatio + "% Daily Value");
+        calciumLabel.setText(CalciumRatio + "% Daily Value");
+        phosphorusLabel.setText(PhosphorusRatio + "% Daily Value");
+        magnesiumLabel.setText(MagnesiumRatio + "% Daily Value");
+        ironLabel.setText(IronRatio + "% Daily Value");
+        zincLabel.setText(ZincRatio + "% Daily Value");
+        copperLabel.setText(CopperRatio + "% Daily Value");
+        potassiumLabel.setText(PotassiumRatio + "% Daily Value");
+
+
+
     }
 }

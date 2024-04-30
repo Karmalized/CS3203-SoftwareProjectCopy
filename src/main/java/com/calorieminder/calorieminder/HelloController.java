@@ -6,15 +6,20 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class HelloController {
+    User user = new User();
+
     @FXML
     private Label welcomeText;
     //OUTDATED
@@ -31,6 +36,7 @@ public class HelloController {
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
+
     }
 
     @FXML
@@ -95,6 +101,7 @@ public class HelloController {
         currentWindow.setScene(scene);
         currentWindow.show();
     }
+
 
     //Possible transition function to cater to all pages rather than make multiple methods for one
     //protected void transitionToPage (ActionEvent event, String fxmlLink) throws IO Exception {}
