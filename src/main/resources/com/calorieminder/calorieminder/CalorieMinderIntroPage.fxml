@@ -39,7 +39,7 @@
       </ChoiceBox>
       <ChoiceBox fx:id="Height_Inches" layoutX="350.0" layoutY="153.0" prefHeight="27.0" prefWidth="52.0" />
       <ChoiceBox fx:id="Height_Feet" layoutX="275.0" layoutY="154.0" prefHeight="27.0" prefWidth="52.0" />
-      <Slider fx:id="Weight_lbs" blockIncrement="0.1" layoutX="263.0" layoutY="89.0" max="400.0" min="50.0" showTickLabels="true" snapToTicks="true" value="1.0" />
+      <Slider fx:id="Weight_lbs" blockIncrement="0.1" layoutX="263.0" layoutY="89.0" max="400.0" min="50.0" minorTickCount="1" onMouseReleased="#onWeightSliderChange" showTickLabels="true" snapToTicks="true" value="1.0" />
       <Text fill="#575757" layoutX="82.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday: ">
          <font>
             <Font size="24.0" />
