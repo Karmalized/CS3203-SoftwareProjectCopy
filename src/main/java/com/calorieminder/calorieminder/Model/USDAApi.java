@@ -1,5 +1,6 @@
 package com.calorieminder.calorieminder.Model;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -31,12 +32,20 @@ public class USDAApi {
 
         //Parser test
         try {
-            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
-            JSONObject jsonObject = (JSONObject) new JSONParser().parse(response.body());;
-            System.out.println(jsonObject.get("description"));
-            System.out.println(jsonObject.get("foodNutrients"));
-            String Nutrients = jsonObject.get("foodNutrients").toString();
+                response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+                System.out.println(response.body());
+                JSONObject jsonObject = (JSONObject) new JSONParser().parse(response.body());
+                ;
+                System.out.println(jsonObject.get("foodNutrients"));
+                JSONArray nestedObject = (JSONArray) jsonObject.get("foodNutrients");
+
+                for (int i = 0; i < nestedObject.size(); i++) {
+                    JSONObject foodNutrient = (JSONObject) nestedObject.get(i);
+                    System.out.println(foodNutrient.get("name") + " " + foodNutrient.get("amount") + foodNutrient.get("unitName"));
+                    System.out.println();
+
+                }
+
 
 
         } catch (IOException | InterruptedException | ParseException e) {
