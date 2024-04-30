@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.stage.Stage;
@@ -106,6 +107,43 @@ public class HelloController {
     {
         double weight = Weight_lbs.getValue();
         System.out.println(weight);
+    }
+
+    @FXML
+    private ComboBox<String> heightFt;
+    @FXML
+    private ComboBox<String> heightIn;
+    @FXML
+    private ComboBox<String> activity;
+    @FXML
+    private ComboBox<String> sex; //adds sex
+
+    @FXML
+    void addFt()
+    {
+        ObservableList<String> ftOptions = FXCollections.observableArrayList("1","2","3","4","5","6","7");
+        heightFt.setItems(ftOptions);
+    }
+
+    @FXML
+    void addIn()
+    {
+        ObservableList<String> inOptions = FXCollections.observableArrayList("0","1","2","3","4","5","6","7","8","9","10","11");
+        heightIn.setItems(inOptions);
+    }
+
+    @FXML
+    void addActivities()
+    {
+        ObservableList<String> activityOptions = FXCollections.observableArrayList("test1","test2");
+        activity.setItems(activityOptions);
+    }
+
+    @FXML
+    void addSex()
+    {
+        ObservableList<String> sexOptions = FXCollections.observableArrayList("Male", "Female");
+        sex.setItems(sexOptions);
     }
     //Possible transition function to cater to all pages rather than make multiple methods for one
     //protected void transitionToPage (ActionEvent event, String fxmlLink) throws IO Exception {}
