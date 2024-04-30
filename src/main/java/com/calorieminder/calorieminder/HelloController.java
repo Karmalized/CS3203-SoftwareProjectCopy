@@ -17,6 +17,10 @@ import java.util.ArrayList;
 public class HelloController {
     @FXML
     private Label welcomeText;
+
+    @FXML
+    User newUser = new User();
+
     //OUTDATED
     @FXML
     protected void onHelloButtonClick() {
@@ -181,7 +185,6 @@ public class HelloController {
         char sexChar = sexString.charAt(0);
 
         //Save everything to User class
-        User newUser = new User();
         newUser.setWeight(weight);
         newUser.setHeight(height);
         newUser.setBirthday(birthdayIntArray);
