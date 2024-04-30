@@ -30,7 +30,7 @@
          </children>
       </AnchorPane>
       <DatePicker fx:id="Birthday" layoutX="249.0" layoutY="205.0" />
-      <Slider fx:id="Weight_lbs" blockIncrement="0.1" layoutX="263.0" layoutY="89.0" max="400.0" min="50.0" minorTickCount="1" onMouseReleased="#onWeightSliderChange" showTickLabels="true" snapToTicks="true" value="1.0" />
+      <Slider fx:id="Weight_lbs" blockIncrement="0.1" layoutX="263.0" layoutY="89.0" majorTickUnit="50.0" max="400.0" min="50.0" minorTickCount="48" onMouseReleased="#onWeightSliderChange" prefHeight="32.0" prefWidth="271.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="50.0" />
       <Text fill="#575757" layoutX="82.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday: ">
          <font>
             <Font size="24.0" />
@@ -65,5 +65,7 @@
       <ComboBox fx:id="heightIn" layoutX="350.0" layoutY="154.0" prefHeight="25.0" prefWidth="52.0" />
       <ComboBox fx:id="sex" layoutX="258.0" layoutY="310.0" prefWidth="150.001" />
       <ComboBox fx:id="activity" layoutX="259.0" layoutY="253.0" prefWidth="150.0" />
+      <Label fx:id="weightLabel" layoutX="553.0" layoutY="89.0" prefHeight="17.0" prefWidth="39.0" text="50" />
+      <Text layoutX="593.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lbs." />
    </children>
 </Pane>

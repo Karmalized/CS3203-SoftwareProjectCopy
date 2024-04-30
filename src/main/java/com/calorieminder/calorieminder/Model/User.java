@@ -11,6 +11,9 @@ public class User {
     //weight of the user in pounds
     private double weight;
 
+    //height of the user in inches
+    private double height;
+
     //contains the sex of the user (either M or F)
     private char sex;
 
@@ -50,6 +53,12 @@ public class User {
     public double getWeight() {
         return weight;
     }
+    public void setHeight(double height) {this.height = height; }
+    public double getHeight() { return height;}
+    public int getActivityLevel() {return ActivityLevel;}
+    public void setActivityLevel(int ActivityLevel) {this.ActivityLevel = ActivityLevel;}
+    public void setSex(char sex) {this.sex = sex;}
+    public char getSex() {return sex;}
     public double getProteinGrams() {
         return proteinGrams;
     }
@@ -75,7 +84,17 @@ public class User {
         this.waterML = waterML;
     }
 
-
+    //Prints all values for testing
+    public void printAll()
+    {
+        System.out.println("Birthyear: " + Birthday[0]);
+        System.out.println("Birthmonth: " + Birthday[1]);
+        System.out.println("Birthday: " + Birthday[2]);
+        System.out.println("Weight: " + weight);
+        System.out.println("Height: " + height);
+        System.out.println("Sex: " + sex);
+        System.out.println("ActivityLevel: " + ActivityLevel);
+    }
 
 
 
