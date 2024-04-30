@@ -64,11 +64,11 @@
             <Font size="42.0" />
          </font>
       </Text>
-      <ComboBox fx:id="heightFt" layoutX="275.0" layoutY="154.0" prefHeight="25.0" prefWidth="52.0" />
-      <ComboBox fx:id="heightIn" layoutX="350.0" layoutY="154.0" prefHeight="25.0" prefWidth="52.0" />
+      <ComboBox fx:id="heightFt" layoutX="270.0" layoutY="154.0" prefHeight="30.0" prefWidth="60.0" />
+      <ComboBox fx:id="heightIn" layoutX="352.0" layoutY="154.0" prefHeight="30.0" prefWidth="60.0" />
       <ComboBox fx:id="sex" layoutX="258.0" layoutY="310.0" prefWidth="150.001" />
       <ComboBox fx:id="activity" layoutX="259.0" layoutY="253.0" prefWidth="150.0" />
-      <Label fx:id="weightLabel" layoutX="553.0" layoutY="89.0" prefHeight="17.0" prefWidth="39.0" text="50" />
+      <Label fx:id="weightLabel" layoutX="550.0" layoutY="89.0" prefHeight="17.0" prefWidth="50.0" text="50" />
       <Text layoutX="593.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lbs." />
       <Text layoutX="450" layoutY="379" strokeType="OUTSIDE" strokeWidth="0.0" text="" fx:id="ErrorIntro" />
    </children>
