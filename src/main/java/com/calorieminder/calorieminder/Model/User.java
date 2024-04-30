@@ -26,8 +26,6 @@ public class User {
     //Body Mass Index of the User
     private double BMI;
 
-    //Height in inches
-    private double height;
 
     //Macronutrient intake of the User
     private double proteinGrams = 0;
