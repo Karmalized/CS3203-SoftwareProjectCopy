@@ -159,6 +159,7 @@ public class User {
         System.out.println("Protein: " + getProteinGrams());
         System.out.println("Carb: " + getCarbGrams());
         System.out.println("Fat: " + getFatGrams());
+        System.out.println("Water Consumed: " + getWaterML());
     }
 
 

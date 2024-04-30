@@ -20,7 +20,7 @@ public class Water {
     }
 
     //update the water consumed
-    void updateWaterConsumed(float volumeConsumed, String unit)
+   public void updateWaterConsumed(float volumeConsumed, String unit)
     {
         switch (unit) {
             case "mL":
@@ -29,5 +29,10 @@ public class Water {
             case "oz":
                 waterConsumed += volumeConsumed*29.5735;
         }
+    }
+
+    public double getWaterConsumed()
+    {
+        return waterConsumed;
     }
 }
