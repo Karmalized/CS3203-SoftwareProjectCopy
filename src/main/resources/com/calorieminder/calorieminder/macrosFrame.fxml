@@ -39,7 +39,7 @@
       <Text fx:id="BMI" layoutX="19.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMI:" wrappingWidth="250" />
       <Text fx:id="BMR" layoutX="19.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMR:" wrappingWidth="250" />
        <Text fx:id="WaterIntake" layoutX="19.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Intake:" wrappingWidth="250" />
-      <Text fx:id="Calories" layoutX="19.0" layoutY="244" strokeType="OUTSIDE" strokeWidth="0.0" text="Calories: " wrappingWidth="250"/>
+      <Text fx:id="Calories" layoutX="19.0" layoutY="244" strokeType="OUTSIDE" strokeWidth="0.0" text="Calories: " wrappingWidth="250" />
        <Text layoutX="229.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MACROS" wrappingWidth="142.9830722808838">
          <font>
             <Font size="35.0" />
