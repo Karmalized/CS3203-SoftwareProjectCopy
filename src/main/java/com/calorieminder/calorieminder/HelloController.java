@@ -12,10 +12,13 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 
@@ -119,8 +122,6 @@ public class HelloController {
         searchResults = results;
         moveToFoodSearchResultsPage(actionEvent);
     }
-
-
 
 
     //Possible transition function to cater to all pages rather than make multiple methods for one

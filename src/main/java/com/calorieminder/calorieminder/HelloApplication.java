@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 
 public class HelloApplication extends Application {
     @Override
@@ -29,6 +29,12 @@ public class HelloApplication extends Application {
         start.addIn();
         start.addActivities();
         start.addSex(); //adds sex
+    }
+
+    @Override
+    public void stop() throws Exception {
+        BufferedOutputStream outFile = new BufferedOutputStream(new FileOutputStream(new File("UserData.csv")));
+
     }
 
     public static void main(String[] args) {
