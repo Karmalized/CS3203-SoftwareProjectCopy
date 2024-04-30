@@ -12,6 +12,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class macrosFrame extends HelloController {
     private DeficiencyCalculator deficiencyCalculator;
@@ -57,10 +58,12 @@ public class macrosFrame extends HelloController {
     }
     @FXML
     private void initialize() {
-    Protein.setText("Protein: " + user.getProteinGrams() + " g");
-    Carbs.setText("Carbs: " + user.getCarbGrams() + " g");
-    Fat.setText("Fat: " + user.getFatGrams() + " g");
-    BMI.setText("BMI: " + String.valueOf(BMIRCalculator.calculateBMI(user.getHeight()*0.0254,user.getWeight())));
+        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df2 = new DecimalFormat("#.###");
+    Protein.setText("Protein: " + df.format(user.getProteinGrams()) + " g");
+    Carbs.setText("Carbs: " + df.format(user.getCarbGrams()) + " g");
+    Fat.setText("Fat: " + df.format(user.getFatGrams()) + " g");
+    BMI.setText("BMI: " + String.valueOf(df.format(BMIRCalculator.calculateBMI(user.getHeight()*0.0254,user.getWeight()))));
 
     }
 

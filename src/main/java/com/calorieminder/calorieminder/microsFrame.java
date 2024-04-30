@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class microsFrame extends HelloController {
@@ -58,6 +59,7 @@ public class microsFrame extends HelloController {
 
     @FXML
      private void initialize() {
+        DecimalFormat df = new DecimalFormat("#.##");
         double ARatio = (user.getMicronutrientData().getVitaminA()/user.getMicronutrientData().getDailyGoal().get("vitaminA")) * 100;
         double B1Ratio = (user.getMicronutrientData().getVitaminB1()/user.getMicronutrientData().getDailyGoal().get("vitaminB1")) * 100;
         double B2Ratio = (user.getMicronutrientData().getVitaminB2()/user.getMicronutrientData().getDailyGoal().get("vitaminB2")) * 100;
@@ -79,26 +81,26 @@ public class microsFrame extends HelloController {
         double PotassiumRatio = (user.getMicronutrientData().getPotassium()/user.getMicronutrientData().getDailyGoal().get("potassium")) * 100;
         double SodiumRatio = (user.getMicronutrientData().getSodium()/user.getMicronutrientData().getDailyGoal().get("sodium")) * 100;
 
-        vitaminALabel.setText(" " + ARatio + "% Daily Value");
-        vitaminB1Label.setText(" " + B1Ratio + "% Daily Value");
-        vitaminB2Label.setText(" " + B2Ratio + "% Daily Value");
-        vitaminB3Label.setText(" " + B3Ratio + "% Daily Value");
-        vitaminB5Label.setText(" " + B5Ratio + "% Daily Value");
-        vitaminB6Label.setText(" " + B6Ratio + "% Daily Value");
-        vitaminB9Label.setText(" " + B9Ratio + "% Daily Value");
-        vitaminB12Label.setText(" " + B12Ratio + "% Daily Value");
-        vitaminCLabel.setText(" " + CRatio + "% Daily Value");
-        vitaminDLabel.setText(" " + DRatio + "% Daily Value");
-        vitaminELabel.setText(" " + ERatio + "% Daily Value");
-        vitaminKLabel.setText(" " + KRatio + "% Daily Value");
-        calciumLabel.setText(" " + CalciumRatio + "% Daily Value");
-        phosphorusLabel.setText(" " + PhosphorusRatio + "% Daily Value");
-        magnesiumLabel.setText(" " + MagnesiumRatio + "% Daily Value");
-        ironLabel.setText(" " + IronRatio + "% Daily Value");
-        zincLabel.setText(" " + ZincRatio + "% Daily Value");
-        copperLabel.setText(" " + CopperRatio + "% Daily Value");
-        potassiumLabel.setText(" " + PotassiumRatio + "% Daily Value");
-        sodiumLabel.setText(" " + SodiumRatio + "% Daily Value");
+        vitaminALabel.setText(" " + df.format(ARatio) + "% Daily Value");
+        vitaminB1Label.setText(" " + df.format(B1Ratio) + "% Daily Value");
+        vitaminB2Label.setText(" " + df.format(B2Ratio) + "% Daily Value");
+        vitaminB3Label.setText(" " + df.format(B3Ratio) + "% Daily Value");
+        vitaminB5Label.setText(" " + df.format(B5Ratio) + "% Daily Value");
+        vitaminB6Label.setText(" " + df.format(B6Ratio) + "% Daily Value");
+        vitaminB9Label.setText(" " + df.format(B9Ratio) + "% Daily Value");
+        vitaminB12Label.setText(" " + df.format(B12Ratio) + "% Daily Value");
+        vitaminCLabel.setText(" " + df.format(CRatio) + "% Daily Value");
+        vitaminDLabel.setText(" " + df.format(DRatio) + "% Daily Value");
+        vitaminELabel.setText(" " + df.format(ERatio) + "% Daily Value");
+        vitaminKLabel.setText(" " + df.format(KRatio) + "% Daily Value");
+        calciumLabel.setText(" " + df.format(CalciumRatio) + "% Daily Value");
+        phosphorusLabel.setText(" " + df.format(PhosphorusRatio) + "% Daily Value");
+        magnesiumLabel.setText(" " + df.format(MagnesiumRatio) + "% Daily Value");
+        ironLabel.setText(" " + df.format(IronRatio) + "% Daily Value");
+        zincLabel.setText(" " + df.format(ZincRatio) + "% Daily Value");
+        copperLabel.setText(" " + df.format(CopperRatio) + "% Daily Value");
+        potassiumLabel.setText(" " + df.format(PotassiumRatio) + "% Daily Value");
+        sodiumLabel.setText(" " + df.format(SodiumRatio) + "% Daily Value");
      }
 
 
