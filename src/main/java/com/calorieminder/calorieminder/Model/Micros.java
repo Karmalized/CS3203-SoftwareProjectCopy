@@ -3,7 +3,9 @@ package com.calorieminder.calorieminder.Model;
 import java.util.*;
 
 //object for storing micronutrient values
-//ALL UNITS STORED IN MG
+//ALL UNITS STORED IN MG or UG, based on recommended daily intake from USDA
+
+
 public class Micros {
     private double vitaminA = 0;
     private double vitaminB1 = 0;
@@ -35,6 +37,12 @@ public class Micros {
         return Collections.unmodifiableMap(nutrientMap);
     }
 
+    private final Map<String, Double> DailyGoal;
+
+    public Map<String, Double> DailyGoal() {
+        return Collections.unmodifiableMap(DailyGoal);
+    }
+
     public Micros() {
         nutrientMap = new HashMap<>();
         nutrientMap.put(320,"vitaminA");
@@ -58,7 +66,35 @@ public class Micros {
         nutrientMap.put(312,"copper");
         nutrientMap.put(306,"potassium");
 
+        DailyGoal = new HashMap<>();
+        DailyGoal.put("vitaminA", 900.0); //900 mcg (UG)
+        DailyGoal.put("vitaminB1", 1.2); //1.2 mg
+        DailyGoal.put("vitaminB2", 1.3); //1.3 mg
+        DailyGoal.put("vitaminB3", 16.0); //16 mg
+        DailyGoal.put("vitaminB5", 5.0); //5 mg
+        DailyGoal.put("vitaminB6", 1.7); //1.7 mg
+        DailyGoal.put("vitaminB9", 400.0); //400 mcg (UG)
+        DailyGoal.put("vitaminB12", 2.4); //2.4 mcg (UG)
+        DailyGoal.put("sodium", 1500.0); //1500 mg
+        DailyGoal.put("vitaminC", 90.0); //90 mg
+        DailyGoal.put("vitaminD", 20.0); //20 mcg (UG)
+        DailyGoal.put("vitaminE", 15.0); //15 mg
+        DailyGoal.put("vitaminK", 120.0); //120 mcg (UG)
+        DailyGoal.put("calcium", 1300.0); //1300 mg
+        DailyGoal.put("phosphorus", 1250.0); //1250 mg
+        DailyGoal.put("magnesium", 420.0); //420 mg
+        DailyGoal.put("iron", 18.0); //18 mg
+        DailyGoal.put("zinc", 11.0); //11 mg
+        DailyGoal.put("copper", 0.9); //0.9 mg
+        DailyGoal.put("potassium", 4700.0); //4700 mg
+
+
     }
+
+
+
+
+
 
     //increases micronutrient values by set amount based on nutrient specified
     public static void addMicrosbyNutrientID(int nutrientID, Micros micros, double amount) {

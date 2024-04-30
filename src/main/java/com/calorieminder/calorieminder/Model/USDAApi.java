@@ -52,7 +52,8 @@ public class USDAApi {
 
                     if (micros.getNutrientMap().get(NutrientID) != null) {
                         //System.out.println(micros.getNutrientMap().get(NutrientID));
-                        Micros.addMicrosbyNutrientID(NutrientID, micros, Double.parseDouble(foodNutrient.get("amount").toString()));
+                        double amount = Double.parseDouble(foodNutrient.get("amount").toString());
+                        Micros.addMicrosbyNutrientID(NutrientID, micros, amount);
                     }
                     //System.out.println();
 
