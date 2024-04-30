@@ -74,7 +74,7 @@ public class USDAApi {
 
     public JSONObject getFoodsByName(String food) {
 
-        //remove illegal characters
+        //remove illegal characters from string
         food = food.replaceAll("[^a-zA-Z\\s]", "");
         food = food.replaceAll(" ","%20");
         HttpRequest request = HttpRequest.newBuilder()
