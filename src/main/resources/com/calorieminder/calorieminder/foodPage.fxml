@@ -11,7 +11,7 @@
          <children>
             <TextField layoutX="219.0" layoutY="74.0" />
             <Button layoutX="391.0" layoutY="74.0" mnemonicParsing="false" text="Search" />
-            <Button layoutX="28.0" layoutY="323.0" mnemonicParsing="false" onAction="#moveToMainPage" text="Back" />
+            <Button layoutX="525.0" layoutY="323.0" mnemonicParsing="false" onAction="#moveToMainPage" text="Back" />
          </children></AnchorPane>
   </content>
 </TitledPane>
