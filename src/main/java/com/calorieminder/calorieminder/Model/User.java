@@ -30,6 +30,7 @@ public class User {
     //Body Mass Index of the User
     private double BMI;
 
+
     //Macronutrient intake of the User
     private double proteinGrams = 0;
     private double fatGrams = 0;
@@ -136,6 +137,10 @@ public class User {
         System.out.println("Height: " + height);
         System.out.println("Sex: " + sex);
         System.out.println("ActivityLevel: " + ActivityLevel);
+        Micros.PrintAllMicros(micronutrientData);
+        System.out.println("Protein: " + getProteinGrams());
+        System.out.println("Carb: " + getCarbGrams());
+        System.out.println("Fat: " + getFatGrams());
     }
 
 
