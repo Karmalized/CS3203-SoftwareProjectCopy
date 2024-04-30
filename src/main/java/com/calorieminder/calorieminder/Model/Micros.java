@@ -5,26 +5,26 @@ import java.util.*;
 //object for storing micronutrient values
 //ALL UNITS STORED IN MG
 public class Micros {
-    private double vitaminA;
-    private double vitaminB1;
-    private double vitaminB2;
-    private double vitaminB3;
-    private double vitaminB5;
-    private double vitaminB6;
-    private double vitaminB9;
-    private double vitaminB12;
-    private double vitaminC;
-    private double vitaminD;
-    private double vitaminE;
-    private double vitaminK;
-    private double calcium;
-    private double phosphorus;
-    private double magnesium;
-    private double iron;
-    private double zinc;
-    private double copper;
-    private double potassium;
-    private double sodium;
+    private double vitaminA = 0;
+    private double vitaminB1 = 0;
+    private double vitaminB2 = 0;
+    private double vitaminB3 = 0;
+    private double vitaminB5 = 0;
+    private double vitaminB6 = 0;
+    private double vitaminB9 = 0;
+    private double vitaminB12 = 0;
+    private double vitaminC = 0;
+    private double vitaminD = 0;
+    private double vitaminE = 0;
+    private double vitaminK = 0;
+    private double calcium = 0;
+    private double phosphorus = 0;
+    private double magnesium = 0;
+    private double iron = 0;
+    private double zinc = 0;
+    private double copper = 0;
+    private double potassium = 0;
+    private double sodium = 0;
 
     //USDA number corresponding to each nutrient for the API call
     public final Integer[] nutrientNumbers = {320,404,405,406,410,415,417,418,401,328,573,430,301,305,304,303,309,312,306,307};
