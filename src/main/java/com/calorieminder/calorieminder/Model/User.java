@@ -122,6 +122,10 @@ public class User {
         System.out.println("Height: " + height);
         System.out.println("Sex: " + sex);
         System.out.println("ActivityLevel: " + ActivityLevel);
+        Micros.PrintAllMicros(micronutrientData);
+        System.out.println("Protein: " + getProteinGrams());
+        System.out.println("Carb: " + getCarbGrams());
+        System.out.println("Fat: " + getFatGrams());
     }
 
 
