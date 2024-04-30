@@ -123,6 +123,7 @@ public class HelloController {
             moveToFoodSearchResultsPage(actionEvent);
         }
         catch (NullPointerException e) {
+            searchBar.setText("ERROR: API KEY ISSUE");
             System.out.println("You are out of API Calls");
         }
     }
