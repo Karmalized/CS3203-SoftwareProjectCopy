@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.lang.model.type.NullType;
 import java.io.IOException;
 
 public class macrosFrame extends HelloController {

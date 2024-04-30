@@ -121,7 +121,6 @@ public class  welcomeFrame extends HelloController {
     @Override //SUPERCLASS CALL FOR TRANSITIONS
     protected void moveToMainPage(ActionEvent event) throws IOException {
         macrosFrame newFrame = new macrosFrame();
-        newFrame.addInfo(user, deficiencyCalculator);
         super.moveToMainPage(event);
     }
 }
