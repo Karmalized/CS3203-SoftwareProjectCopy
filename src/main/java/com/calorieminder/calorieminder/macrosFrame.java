@@ -13,6 +13,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class macrosFrame extends HelloController {
+    private User user;
+    private DeficiencyCalculator deficiencyCalculator;
+
     //ONPAGE VARIABLES
     @FXML
     private Text Protein;
@@ -36,6 +39,8 @@ public class macrosFrame extends HelloController {
     @Override
     protected void moveToMicrosPage(ActionEvent event) throws IOException {
         super.moveToMicrosPage(event);
+        microsFrame microFrame = new microsFrame();
+        microFrame.updateInfo(user);
     }
 
     @Override
@@ -54,6 +59,8 @@ public class macrosFrame extends HelloController {
     }
     //NOTE: USER CLASS IN THIS FUNCTION TBD (Probably going to be replaced with a Macros File)
     public void addInfo(User user, DeficiencyCalculator deficiencyCalculator){
+        this.user = user;
+        this.deficiencyCalculator = deficiencyCalculator;
         //TAKE ALL TEXTS AND OBTAIN STRINGS FROM THEM
         String P = Protein.getText();
         String C = Carbs.getText();
