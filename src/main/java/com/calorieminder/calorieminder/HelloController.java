@@ -1,5 +1,6 @@
 package com.calorieminder.calorieminder;
 
+import com.calorieminder.calorieminder.Model.USDAApi;
 import com.calorieminder.calorieminder.Model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class HelloController {
+    @FXML
+    private TextField searchBar;
     User user = new User();
 
     @FXML
@@ -94,12 +97,21 @@ public class HelloController {
     }
 
     @FXML
-    protected void moveToFoodSearchResultsPage(ActionEvent event) throws IOException {
+    protected void moveToFoodSearchResultsPage(ActionEvent event, String[] results) throws IOException {
         FXMLLoader main = new FXMLLoader(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(main.load(), 600, 400);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
+    }
+
+    public void searchFood(ActionEvent actionEvent) throws IOException {
+        USDAApi api = new USDAApi();
+        String[] results = api.getFoodsStringByName(searchBar.getText());
+        for (int i = 0; i < results.length; i++) {
+            System.out.println(results[i]);
+        }
+        moveToFoodSearchResultsPage(actionEvent,results);
     }
 
 
