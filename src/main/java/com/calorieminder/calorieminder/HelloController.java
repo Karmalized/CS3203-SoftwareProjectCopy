@@ -112,14 +112,20 @@ public class HelloController {
 
     public void searchFood(ActionEvent actionEvent) throws IOException {
         USDAApi api = new USDAApi();
-        String[] results = api.getFoodsStringByName(searchBar.getText());
-        for (int i = 0; i < results.length; i++) {
-            System.out.println(results[i]);
+        try {
+            String[] results = api.getFoodsStringByName(searchBar.getText());
+            for (int i = 0; i < results.length; i++) {
+                System.out.println(results[i]);
+            }
+            if (results.length == 0)
+                System.out.println("EMPTY ARRAY");
+            searchResults = results;
+            moveToFoodSearchResultsPage(actionEvent);
         }
-        if (results.length == 0)
-            System.out.println("EMPTY ARRAY");
-        searchResults = results;
-        moveToFoodSearchResultsPage(actionEvent);
+        catch (NullPointerException e) {
+            searchBar.setText("ERROR: API KEY ISSUE");
+            System.out.println("You are out of API Calls");
+        }
     }
 
 

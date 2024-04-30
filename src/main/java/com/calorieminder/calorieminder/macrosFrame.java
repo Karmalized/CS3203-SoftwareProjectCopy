@@ -66,11 +66,11 @@ public class macrosFrame extends HelloController {
         BMI.setText("BMI: " + String.format("%.2f", BMIRCalculator.calculateBMI(user.getWeight(), user.getHeight())));
         Calories.setText("Calories: " + String.format("%.2f", 4*user.getCarbGrams()+4*user.getProteinGrams()+9*user.getFatGrams()));
         if (user.getSex() == 'M' || user.getSex() == 'm') {
-            BMR.setText("BMR: " + BMIRCalculator.calculateBMRMen(user.getWeight(), user.getHeight(), user.getAge()));
+            BMR.setText("BMR: " + String.format("%.2f", BMIRCalculator.calculateBMRMen(user.getWeight(), user.getHeight(), user.getAge())));
         } else {
-            BMR.setText("BMR: " + BMIRCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge()));
+            BMR.setText("BMR: " + String.format("%.2f",BMIRCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge())));
         }
-        WaterIntake.setText("Water Intake: " + user.getWaterML() + " mL");
+        WaterIntake.setText("Water Intake: " + String.format("%.2f",user.getWaterML()) + " mL");
     }
 
 
