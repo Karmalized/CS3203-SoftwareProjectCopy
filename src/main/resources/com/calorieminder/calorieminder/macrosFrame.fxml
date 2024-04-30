@@ -30,7 +30,7 @@
       </ButtonBar>
       <ButtonBar layoutX="470.0" layoutY="338.0" prefHeight="40.0" prefWidth="110.0">
         <buttons>
-          <Button mnemonicParsing="false" onAction="#moveToNewDayPage" prefHeight="26.0" prefWidth="106.0" text="Weight Log" />
+          <Button mnemonicParsing="false" onAction="#moveToNewDayPage" prefHeight="26.0" prefWidth="106.0" text="New Day" />
         </buttons>
       </ButtonBar>
       <Text fx:id="Protein" layoutX="19.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Protein:" wrappingWidth="250" />
