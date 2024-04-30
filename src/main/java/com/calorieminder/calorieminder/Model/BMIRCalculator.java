@@ -4,7 +4,7 @@ public class BMIRCalculator {
 
     //input weight in kg and height in meters; returns BMI
     public static double calculateBMI(double weight, double height) {
-        return weight / (height * height);
+        return ((weight * 703) / (height * height));
     }
 
     //calculates Basal Metabolic Rate for men

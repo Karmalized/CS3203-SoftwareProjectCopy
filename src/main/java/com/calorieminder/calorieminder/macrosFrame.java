@@ -60,7 +60,7 @@ public class macrosFrame extends HelloController {
     Protein.setText("Protein: " + user.getProteinGrams() + " g");
     Carbs.setText("Carbs: " + user.getCarbGrams() + " g");
     Fat.setText("Fat: " + user.getFatGrams() + " g");
-    BMI.setText("BMI: " + String.valueOf(BMIRCalculator.calculateBMI(user.getHeight()*0.0254,user.getWeight())));
+    BMI.setText("BMI: " + String.format("%.2f",BMIRCalculator.calculateBMI(user.getWeight(),user.getHeight())));
 
     }
 

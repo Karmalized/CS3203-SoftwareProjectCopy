@@ -79,26 +79,26 @@ public class microsFrame extends HelloController {
         double PotassiumRatio = (user.getMicronutrientData().getPotassium()/user.getMicronutrientData().getDailyGoal().get("potassium")) * 100;
         double SodiumRatio = (user.getMicronutrientData().getSodium()/user.getMicronutrientData().getDailyGoal().get("sodium")) * 100;
 
-        vitaminALabel.setText(" " + ARatio + "% Daily Value");
-        vitaminB1Label.setText(" " + B1Ratio + "% Daily Value");
-        vitaminB2Label.setText(" " + B2Ratio + "% Daily Value");
-        vitaminB3Label.setText(" " + B3Ratio + "% Daily Value");
-        vitaminB5Label.setText(" " + B5Ratio + "% Daily Value");
-        vitaminB6Label.setText(" " + B6Ratio + "% Daily Value");
-        vitaminB9Label.setText(" " + B9Ratio + "% Daily Value");
-        vitaminB12Label.setText(" " + B12Ratio + "% Daily Value");
-        vitaminCLabel.setText(" " + CRatio + "% Daily Value");
-        vitaminDLabel.setText(" " + DRatio + "% Daily Value");
-        vitaminELabel.setText(" " + ERatio + "% Daily Value");
-        vitaminKLabel.setText(" " + KRatio + "% Daily Value");
-        calciumLabel.setText(" " + CalciumRatio + "% Daily Value");
-        phosphorusLabel.setText(" " + PhosphorusRatio + "% Daily Value");
-        magnesiumLabel.setText(" " + MagnesiumRatio + "% Daily Value");
-        ironLabel.setText(" " + IronRatio + "% Daily Value");
-        zincLabel.setText(" " + ZincRatio + "% Daily Value");
-        copperLabel.setText(" " + CopperRatio + "% Daily Value");
-        potassiumLabel.setText(" " + PotassiumRatio + "% Daily Value");
-        sodiumLabel.setText(" " + SodiumRatio + "% Daily Value");
+        vitaminALabel.setText(" " + ARatio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminA() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminA")+ ")");
+        vitaminB1Label.setText(" " + B1Ratio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminB1() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminB1")+ ")");
+        vitaminB2Label.setText(" " + B2Ratio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminB2() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminB2")+ ")");
+        vitaminB3Label.setText(" " + B3Ratio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminB3() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminB3")+ ")");
+        vitaminB5Label.setText(" " + B5Ratio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminB5() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminB5")+ ")");
+        vitaminB6Label.setText(" " + B6Ratio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminB6() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminB6")+ ")");
+        vitaminB9Label.setText(" " + B9Ratio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminB9() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminB9")+ ")");
+        vitaminB12Label.setText(" " + B12Ratio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminB12() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminB12")+ ")");
+        vitaminCLabel.setText(" " + CRatio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminC() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminC")+ ")");
+        vitaminDLabel.setText(" " + DRatio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminD() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminD")+ ")");
+        vitaminELabel.setText(" " + ERatio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminE() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminE")+ ")");
+        vitaminKLabel.setText(" " + KRatio + "% Daily Value" + " (" + user.getMicronutrientData().getVitaminK() + "|" + user.getMicronutrientData().getDailyGoal().get("vitaminK")+ ")");
+        calciumLabel.setText(" " + CalciumRatio + "% Daily Value" + " (" + user.getMicronutrientData().getCalcium() + "|" + user.getMicronutrientData().getDailyGoal().get("calcium")+ ")");
+        phosphorusLabel.setText(" " + PhosphorusRatio + "% Daily Value" + " (" + user.getMicronutrientData().getPhosphorus() + "|" + user.getMicronutrientData().getDailyGoal().get("phosphorus")+ ")");
+        magnesiumLabel.setText(" " + MagnesiumRatio + "% Daily Value" + " (" + user.getMicronutrientData().getMagnesium() + "|" + user.getMicronutrientData().getDailyGoal().get("magnesium")+ ")");
+        ironLabel.setText(" " + IronRatio + "% Daily Value" + " (" + user.getMicronutrientData().getIron() + "|" + user.getMicronutrientData().getDailyGoal().get("iron")+ ")");
+        zincLabel.setText(" " + ZincRatio + "% Daily Value" + " (" + user.getMicronutrientData().getZinc() + "|" + user.getMicronutrientData().getDailyGoal().get("zinc")+ ")");
+        copperLabel.setText(" " + CopperRatio + "% Daily Value" + " (" + user.getMicronutrientData().getCopper() + "|" + user.getMicronutrientData().getDailyGoal().get("copper")+ ")");
+        potassiumLabel.setText(" " + PotassiumRatio + "% Daily Value" + " (" + user.getMicronutrientData().getPotassium() + "|" + user.getMicronutrientData().getDailyGoal().get("potassium")+ ")");
+        sodiumLabel.setText(" " + SodiumRatio + "% Daily Value" + " (" + user.getMicronutrientData().getSodium() + "|" + user.getMicronutrientData().getDailyGoal().get("sodium")+ ")");
      }
 
 
