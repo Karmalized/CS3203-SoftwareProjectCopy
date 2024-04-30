@@ -3,6 +3,7 @@ package com.calorieminder.calorieminder.Model;
 import java.util.*;
 
 //object for storing micronutrient values
+//ALL UNITS STORED IN MG
 public class Micros {
     private double vitaminA;
     private double vitaminB1;
@@ -28,36 +29,128 @@ public class Micros {
     //USDA number corresponding to each nutrient for the API call
     public final Integer[] nutrientNumbers = {320,404,405,406,410,415,417,418,401,328,573,430,301,305,304,303,309,312,306,307};
 
-    private final Map<String, Integer> nutrientMap;
+    private final Map<Integer, String> nutrientMap;
 
-    public Map<String, Integer> getNutrientMap() {
+    public Map<Integer, String> getNutrientMap() {
         return Collections.unmodifiableMap(nutrientMap);
     }
 
     public Micros() {
         nutrientMap = new HashMap<>();
-        nutrientMap.put("vitaminA", 320);
-        nutrientMap.put("vitaminB1", 404);
-        nutrientMap.put("vitaminB2", 405);
-        nutrientMap.put("vitaminB3", 406);
-        nutrientMap.put("vitaminB5", 410);
-        nutrientMap.put("vitaminB6", 415);
-        nutrientMap.put("vitaminB9", 417);
-        nutrientMap.put("vitaminB12", 418);
-        nutrientMap.put("vitaminC", 401);
-        nutrientMap.put("vitaminD", 328);
-        nutrientMap.put("vitaminE", 573);
-        nutrientMap.put("vitaminK", 430);
-        nutrientMap.put("calcium", 301);
-        nutrientMap.put("phosphorus", 305);
-        nutrientMap.put("magnesium", 304);
-        nutrientMap.put("iron", 303);
-        nutrientMap.put("zinc", 309);
-        nutrientMap.put("copper", 312);
-        nutrientMap.put("potassium", 306);
+        nutrientMap.put(320,"vitaminA");
+        nutrientMap.put(404,"vitaminB1");
+        nutrientMap.put(405,"vitaminB2");
+        nutrientMap.put(406,"vitaminB3");
+        nutrientMap.put(410,"vitaminB5");
+        nutrientMap.put(415,"vitaminB6");
+        nutrientMap.put(417,"vitaminB9");
+        nutrientMap.put(418,"vitaminB12");
+        nutrientMap.put(307,"sodium");
+        nutrientMap.put(401,"vitaminC");
+        nutrientMap.put(328,"vitaminD");
+        nutrientMap.put(573,"vitaminE");
+        nutrientMap.put(430,"vitaminK");
+        nutrientMap.put(301,"calcium");
+        nutrientMap.put(305,"phosphorus");
+        nutrientMap.put(304,"magnesium");
+        nutrientMap.put(303,"iron");
+        nutrientMap.put(309,"zinc");
+        nutrientMap.put(312,"copper");
+        nutrientMap.put(306,"potassium");
 
     }
 
+    //increases micronutrient values by set amount based on nutrient specified
+    public static void addMicrosbyNutrientID(int nutrientID, Micros micros, double amount) {
+        switch (nutrientID) {
+            case 320:
+                micros.setVitaminA(micros.getVitaminA() + amount);
+                break;
+            case 404:
+                micros.setVitaminB1(micros.getVitaminB1() + amount);
+                break;
+            case 405:
+                micros.setVitaminB2(micros.getVitaminB2() + amount);
+                break;
+            case 406:
+                micros.setVitaminB3(micros.getVitaminB3() + amount);
+                break;
+            case 410:
+                micros.setVitaminB5(micros.getVitaminB5() + amount);
+                break;
+            case 415:
+                micros.setVitaminB6(micros.getVitaminB6() + amount);
+                break;
+            case 417:
+                micros.setVitaminB9(micros.getVitaminB9() + amount);
+                break;
+            case 418:
+                micros.setVitaminB12(micros.getVitaminB12() + amount);
+                break;
+            case 307:
+                micros.setSodium(micros.getSodium() + amount);
+                break;
+            case 401:
+                micros.setVitaminC(micros.getVitaminC() + amount);
+                break;
+            case 328:
+                micros.setVitaminD(micros.getVitaminD() + amount);
+                break;
+            case 573:
+                micros.setVitaminE(micros.getVitaminE() + amount);
+                break;
+            case 430:
+                micros.setVitaminK(micros.getVitaminK() + amount);
+                break;
+            case 301:
+                micros.setCalcium(micros.getCalcium() + amount);
+                break;
+            case 305:
+                micros.setPhosphorus(micros.getPhosphorus() + amount);
+                break;
+            case 304:
+                micros.setMagnesium(micros.getMagnesium() + amount);
+                break;
+            case 303:
+                micros.setIron(micros.getIron() + amount);
+                break;
+            case 309:
+                micros.setZinc(micros.getZinc() + amount);
+                break;
+            case 312:
+                micros.setCopper(micros.getCopper() + amount);
+                break;
+            case 306:
+                micros.setPotassium(micros.getPotassium() + amount);
+                break;
+            default:
+                return;
+        }
+        return;
+    }
+
+    public static void PrintAllMicros(Micros micros) {
+        System.out.println("VitaminA: " + micros.getVitaminA());
+        System.out.println("VitaminB1: " + micros.getVitaminB1());
+        System.out.println("VitaminB2: " + micros.getVitaminB2());
+        System.out.println("VitaminB3: " + micros.getVitaminB3());
+        System.out.println("VitaminB5: " + micros.getVitaminB5());
+        System.out.println("VitaminB6: " + micros.getVitaminB6());
+        System.out.println("VitaminB9: " + micros.getVitaminB9());
+        System.out.println("VitaminB12: " + micros.getVitaminB12());
+        System.out.println("Sodium: " + micros.getSodium());
+        System.out.println("VitaminC: " + micros.getVitaminC());
+        System.out.println("VitaminD: " + micros.getVitaminD());
+        System.out.println("VitaminE: " + micros.getVitaminE());
+        System.out.println("VitaminK: " + micros.getVitaminK());
+        System.out.println("Calcium: " + micros.getCalcium());
+        System.out.println("Phosphorus: " + micros.getPhosphorus());
+        System.out.println("Magnesium: " + micros.getMagnesium());
+        System.out.println("Iron: " + micros.getIron());
+        System.out.println("Zinc: " + micros.getZinc());
+        System.out.println("Copper: " + micros.getCopper());
+        System.out.println("Potassium: " + micros.getPotassium());
+    }
     public double getVitaminA() {
         return vitaminA;
     }

@@ -13,8 +13,9 @@ import java.net.http.HttpResponse;
 import java.util.Arrays;
 
 //class for making API calls to USDA and retrieving data
+//Gets every micronutrient & Macronutrient and updates User Info based on that data
 public class USDAApi {
-    public Micros searchForFoodById(int ID) {
+    public void addFoodById(int ID, User person) {
         StringBuilder nutrients = new StringBuilder();
         for (int nutrient : Arrays.asList((new Micros()).nutrientNumbers)) {
             nutrients.append(nutrient).append(",");
@@ -29,7 +30,7 @@ public class USDAApi {
 
         HttpResponse<String> response;
 
-
+        Micros micros = new Micros();
         //Parser test
         try {
                 response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
@@ -41,10 +42,19 @@ public class USDAApi {
 
                 for (int i = 0; i < nestedObject.size(); i++) {
                     JSONObject foodNutrient = (JSONObject) nestedObject.get(i);
-                    System.out.println(foodNutrient.get("name") + " " + foodNutrient.get("amount") + foodNutrient.get("unitName"));
+                    int NutrientID = Integer.parseInt((foodNutrient.get("number").toString()));
+                    System.out.println(foodNutrient.get("name") + " " + foodNutrient.get("amount") + foodNutrient.get("unitName") + " " + NutrientID);
+
+
+                    if (micros.getNutrientMap().get(NutrientID) != null) {
+                        //System.out.println(micros.getNutrientMap().get(NutrientID));
+                        Micros.addMicrosbyNutrientID(NutrientID, micros, Double.parseDouble(foodNutrient.get("amount").toString()));
+                    }
                     System.out.println();
 
+
                 }
+                Micros.PrintAllMicros(micros);
 
 
 
@@ -54,13 +64,14 @@ public class USDAApi {
 
 
 
-        return new Micros();
+        return;
     }
 
      //FOR TESTING
     public static void main(String[] args) {
         USDAApi api = new USDAApi();
-        api.searchForFoodById(2262074);
+        User x = new User();
+        api.addFoodById(1750342 ,x);
     }
 
 }
