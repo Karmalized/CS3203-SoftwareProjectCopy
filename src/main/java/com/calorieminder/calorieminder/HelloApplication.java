@@ -15,12 +15,11 @@ public class HelloApplication extends Application {
         stage.setTitle("Welcome!");
         stage.setScene(scene);
         stage.show();
-        HelloController controller = fxmlLoader.getController();
-        controller.addFt();
-        controller.addIn();
-        controller.addActivities();
-        controller.addSex(); //adds sex
-
+        welcomeFrame start = fxmlLoader.getController();
+        start.addFt();
+        start.addIn();
+        start.addActivities();
+        start.addSex(); //adds sex
     }
 
     public static void main(String[] args) {

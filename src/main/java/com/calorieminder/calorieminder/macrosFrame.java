@@ -53,7 +53,7 @@ public class macrosFrame extends HelloController {
         super.moveToWeightTrendPage(event);
     }
     //NOTE: USER CLASS IN THIS FUNCTION TBD (Probably going to be replaced with a Macros File)
-    private void addInfo(User user, DeficiencyCalculator deficiencyCalculator){
+    public void addInfo(User user, DeficiencyCalculator deficiencyCalculator){
         //TAKE ALL TEXTS AND OBTAIN STRINGS FROM THEM
         String P = Protein.getText();
         String C = Carbs.getText();
@@ -120,8 +120,8 @@ public class macrosFrame extends HelloController {
         Carbs.setText(Cparse[0] + ": " + storeCarbs + "out of: " + deficiencyCalculator.getCarbs() + " (" + storeCarbs + "|" + deficiencyCalculator.getCarbs() + ")" + "Percentage Reached: " + carbsPercent + "%");
         double fatPercent = (storeFats/deficiencyCalculator.getFats()) * 100;
         Fat.setText(Fparse[0] + ": " + storeFats + "out of: " + deficiencyCalculator.getFats() + " (" + storeFats + "|" + deficiencyCalculator.getFats() + ")" + "Percentage Reached: " + fatPercent + "%");
-        //BMI.setText(BIparse[0] + ": " + storeBMI);
-        //BMR.setText(BRparse[0] + ": " + storeBMR);
+        BMI.setText(BIparse[0] + ": ");
+        BMR.setText(BRparse[0] + ": ");
         WaterLeft.setText(WATERparse[0] + ": " + storeWaterLeft);
     }
 }

@@ -46,6 +46,10 @@ public class User {
     public int[] getBirthday() {
         return Birthday;
     }
+//NOTE: THIS GETTER WILL CONVERT BIRTHDAY INTO AN ACTUAL AGE AMOUNT FOR MANIPULATION FROM THE CALCULATORS
+//    public int getAge(){
+//
+//    }
 
     public void setWeight(double weight) {
         this.weight = weight;

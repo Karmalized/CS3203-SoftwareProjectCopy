@@ -11,9 +11,9 @@ public class DeficiencyCalculator {
         fatGrams = 0;
     }
     // Function to calculate the Total Daily Energy Expenditure (TDEE) based on activity level
-    double calculateTDEE(double weightLbs, int feet, int inches, int age, char gender, int activityLevel) {
+    public double calculateTDEE(double weightLbs, int inches, int age, char gender, int activityLevel) {
         double weightKg = weightLbs * 0.453592; // Convert weight from lbs to kg
-        double heightCm = (feet * 12 + inches) * 2.54; // Convert height from feet and inches to cm
+        double heightCm = (inches) * 2.54; // Convert height from total inches to cm
 
         double bmr = 0;
         if (gender == 'M' || gender == 'm') {
