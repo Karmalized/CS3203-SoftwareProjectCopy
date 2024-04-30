@@ -24,7 +24,6 @@ public class HelloController {
     @FXML
     private TextField searchBar;
     public static User user = new User();
-
     @FXML
     private Label welcomeText;
     //OUTDATED

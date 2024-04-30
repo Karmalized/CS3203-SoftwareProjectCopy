@@ -67,5 +67,6 @@
       <ComboBox fx:id="activity" layoutX="259.0" layoutY="253.0" prefWidth="150.0" />
       <Label fx:id="weightLabel" layoutX="553.0" layoutY="89.0" prefHeight="17.0" prefWidth="39.0" text="50" />
       <Text layoutX="593.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lbs." />
+      <Text layoutX="450" layoutY="379" strokeType="OUTSIDE" strokeWidth="0.0" text="" fx:id="ErrorIntro" />
    </children>
 </Pane>
