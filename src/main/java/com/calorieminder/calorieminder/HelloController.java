@@ -21,6 +21,10 @@ public class HelloController {
     @FXML
     User newUser = new User();
 
+    //micronutrient labels
+    @FXML
+    private Label vitaminALabel, vitaminB1Label, vitaminB2Label, vitaminB3Label, vitaminB5Label, vitaminB6Label, vitaminB9Label, vitaminB12Label, vitaminCLabel, vitaminDLabel, vitaminELabel, vitaminKLabel, calciumLabel, phosphorusLabel, magnesiumLabel, ironLabel, zincLabel, copperLabel, potassiumLabel, sodiumLabel;
+
     //OUTDATED
     @FXML
     protected void onHelloButtonClick() {
