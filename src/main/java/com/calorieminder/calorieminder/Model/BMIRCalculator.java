@@ -6,15 +6,15 @@ public class BMIRCalculator {
     public static double calculateBMI(double weight, double height) {
         return ((weight * 703) / (height * height));
     }
-
+    //USES MIFFLIN-ST JEOR EQUATION
     //calculates Basal Metabolic Rate for men
     public static double calculateBMRMen(double weight, double height, double age) {
-        return 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+        return (4.536 * weight) + (15.88 * height) - (5 * age) + 5;
     }
 
     //calculates Basal Metabolic Rate for women
     public static double calculateBMRWomen(double weight, double height, double age) {
-        return 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+        return (4.536 * weight) + (15.88 * height) - (5 * age) + 161;
     }
 
 
