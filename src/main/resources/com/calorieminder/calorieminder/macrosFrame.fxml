@@ -38,7 +38,7 @@
       <Text fx:id="Fat" layoutX="19.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fat:" wrappingWidth="100" />
       <Text fx:id="BMI" layoutX="19.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMI:" wrappingWidth="180.0" />
       <Text fx:id="BMR" layoutX="19.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMR:" wrappingWidth="170.0" />
-      <Text fx:id="WaterLeft" layoutX="19.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Left:" wrappingWidth="101.98307228088379" />
+      <Text fx:id="WaterNeeded" layoutX="19.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water RDI:" wrappingWidth="101.98307228088379" />
       <Text layoutX="229.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MACROS" wrappingWidth="142.9830722808838">
          <font>
             <Font size="35.0" />

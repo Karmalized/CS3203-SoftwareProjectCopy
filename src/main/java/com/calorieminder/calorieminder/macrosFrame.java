@@ -3,6 +3,7 @@ package com.calorieminder.calorieminder;
 import com.calorieminder.calorieminder.Model.BMIRCalculator;
 import com.calorieminder.calorieminder.Model.DeficiencyCalculator;
 import com.calorieminder.calorieminder.Model.User;
+import com.calorieminder.calorieminder.Model.Water;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,7 +29,7 @@ public class macrosFrame extends HelloController {
     @FXML
     private Text BMR;
     @FXML
-    private Text WaterLeft;
+    private Text WaterNeeded;
 
     //SUPERCLASS CALLS FOR TRANSITION PAGES (BUTTONS)
     @Override
@@ -66,6 +67,7 @@ public class macrosFrame extends HelloController {
         } else {
             BMR.setText("BMR: " + BMIRCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge()));
         }
+        WaterNeeded.setText("Water RDI: " + Water.waterPerDayCalc((float)Water.getWeight(), (int)Water.getActivityLevel()) + " ml");
     }
 
 /*
