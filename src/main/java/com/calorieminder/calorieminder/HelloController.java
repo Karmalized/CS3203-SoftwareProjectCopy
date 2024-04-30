@@ -1,30 +1,31 @@
 package com.calorieminder.calorieminder;
 
+import com.calorieminder.calorieminder.Model.USDAApi;
 import com.calorieminder.calorieminder.Model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
+
 
 public class HelloController {
+    public static String[] searchResults;
+    @FXML
+    private TextField searchBar;
+    public static User user = new User();
     @FXML
     private Label welcomeText;
-
-    @FXML
-    User newUser = new User();
-
-    //micronutrient labels
-    @FXML
-    private Label vitaminALabel, vitaminB1Label, vitaminB2Label, vitaminB3Label, vitaminB5Label, vitaminB6Label, vitaminB9Label, vitaminB12Label, vitaminCLabel, vitaminDLabel, vitaminELabel, vitaminKLabel, calciumLabel, phosphorusLabel, magnesiumLabel, ironLabel, zincLabel, copperLabel, potassiumLabel, sodiumLabel;
-
     //OUTDATED
     @FXML
     protected void onHelloButtonClick() {
@@ -48,6 +49,7 @@ public class HelloController {
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
+
     }
 
     @FXML
@@ -97,111 +99,27 @@ public class HelloController {
 
     @FXML
     protected void moveToFoodSearchResultsPage(ActionEvent event) throws IOException {
-        FXMLLoader main = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+        FXMLLoader main = new FXMLLoader(getClass().getResource("SearchResults.fxml"));
         Scene scene = new Scene(main.load(), 600, 400);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
     }
 
-    // INTRO PAGE FUNCTIONS
-    @FXML
-    private Slider Weight_lbs;
-    @FXML
-    private Label weightLabel;
-
-    @FXML
-    void onWeightSliderChange()
-    {
-        double weight = Weight_lbs.getValue();
-        double roundedWeight = Math.floor(weight * 100) / 100;
-        String weightLabelString = Double.toString(roundedWeight);
-        weightLabel.setText(weightLabelString);
+    public void searchFood(ActionEvent actionEvent) throws IOException {
+        USDAApi api = new USDAApi();
+        String[] results = api.getFoodsStringByName(searchBar.getText());
+        for (int i = 0; i < results.length; i++) {
+            System.out.println(results[i]);
+        }
+        if (results.length == 0)
+            System.out.println("EMPTY ARRAY");
+        searchResults = results;
+        moveToFoodSearchResultsPage(actionEvent);
     }
 
-    @FXML
-    private ComboBox<String> heightFt;
-    @FXML
-    private ComboBox<String> heightIn;
-    @FXML
-    private ComboBox<String> activity;
-    @FXML
-    private ComboBox<String> sex; //adds sex
-    @FXML
-    private DatePicker Birthday;
 
-    @FXML
-    void addFt()
-    {
-        ObservableList<String> ftOptions = FXCollections.observableArrayList("1","2","3","4","5","6","7");
-        heightFt.setItems(ftOptions);
-    }
 
-    @FXML
-    void addIn()
-    {
-        ObservableList<String> inOptions = FXCollections.observableArrayList("0","1","2","3","4","5","6","7","8","9","10","11");
-        heightIn.setItems(inOptions);
-    }
-
-    @FXML
-    void addActivities()
-    {
-        ObservableList<String> activityOptions = FXCollections.observableArrayList("1","2","3","4","5");
-        activity.setItems(activityOptions);
-    }
-
-    @FXML
-    void addSex()
-    {
-        ObservableList<String> sexOptions = FXCollections.observableArrayList("M", "F");
-        sex.setItems(sexOptions);
-    }
-
-    @FXML
-    void onIntroPageLeave(ActionEvent event) throws IOException {
-
-        //Save data currently on intro page
-        //Weight
-        double weight = Weight_lbs.getValue();
-        //Height
-        String ftString = heightFt.getValue();
-        int ft = Integer.parseInt(ftString);
-        ft = ft * 12;
-        String inString = heightIn.getValue();
-        int in = Integer.parseInt(inString);
-        double height = ft + in;
-
-        //Birthday
-        String birthday = String.valueOf(Birthday.getValue());
-        String[] birthdayStringArray = birthday.split("-");
-        int[] birthdayIntArray = new int[3];
-        birthdayIntArray[0] = Integer.parseInt(birthdayStringArray[0]);
-        birthdayIntArray[1] = Integer.parseInt(birthdayStringArray[1]);
-        birthdayIntArray[2] = Integer.parseInt(birthdayStringArray[2]);
-
-        //Activity
-        String activityString = activity.getValue();
-        int activityInt = Integer.parseInt(activityString);
-
-        //Sex
-        String sexString = sex.getValue();
-        char sexChar = sexString.charAt(0);
-
-        //Save everything to User class
-        newUser.setWeight(weight);
-        newUser.setHeight(height);
-        newUser.setBirthday(birthdayIntArray);
-        newUser.setActivityLevel(activityInt);
-        newUser.setSex(sexChar);
-
-        //Go to main page
-        FXMLLoader main = new FXMLLoader(getClass().getResource("macrosFrame.fxml"));
-        Scene scene = new Scene(main.load(), 600, 400);
-        Stage currentWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        currentWindow.setScene(scene);
-        currentWindow.show();
-    }
 
     //Possible transition function to cater to all pages rather than make multiple methods for one
     //protected void transitionToPage (ActionEvent event, String fxmlLink) throws IO Exception {}

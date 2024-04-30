@@ -1,9 +1,13 @@
 package com.calorieminder.calorieminder.Model;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.LocalDateTime.*;
+import java.text.DateFormat;
 
 //This class stores all relevant user data for the app (in the scope of 1 day)
 public class User {
     //stores every micronutrient for the user
-    private Micros micronutrientData = new Micros();
+    private Micros micronutrientData;
 
     //stores an array containing Month, Day, Year of birthday
     private int[] Birthday = {1,1,1999};
@@ -26,6 +30,7 @@ public class User {
     //Body Mass Index of the User
     private double BMI;
 
+
     //Macronutrient intake of the User
     private double proteinGrams = 0;
     private double fatGrams = 0;
@@ -33,6 +38,24 @@ public class User {
 
     //water intake of the user in milliliters
     private double waterML = 0;
+
+    //Empty Constructor
+    public User() {
+        micronutrientData = new Micros();
+        weight = 0;
+        height = 0;
+        sex = 'M';
+        ActivityLevel = 1;
+        BMR = 0;
+        BMI = 0;
+        proteinGrams = 0;
+        carbGrams = 0;
+        fatGrams = 0;
+        waterML = 0;
+
+
+
+    }
 
     public void setMicronutrientData(Micros micronutrientData) {
         this.micronutrientData = micronutrientData;
@@ -45,6 +68,20 @@ public class User {
     }
     public int[] getBirthday() {
         return Birthday;
+    }
+//NOTE: THIS GETTER WILL CONVERT BIRTHDAY INTO AN ACTUAL AGE AMOUNT FOR MANIPULATION FROM THE CALCULATORS
+    public double getAge(){
+        LocalDateTime currentSystemTime = LocalDateTime.now();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = dateFormat.format(currentSystemTime);
+        int[] currentTime = new int[3];
+        String[] currentTimeText = formattedDate.split("-");
+        currentTime[0] = Integer.parseInt(currentTimeText[0]);
+        currentTime[1] = Integer.parseInt(currentTimeText[1]);
+        currentTime[2] = Integer.parseInt(currentTimeText[2]);
+        int ageDays = ((currentTime[0]-Birthday[0]) * 365) + Math.abs((currentTime[1]-Birthday[1])* 30) + Math.abs((currentTime[2]-Birthday[2]));
+        double ageYears = ageDays / 365;
+        return ageYears;
     }
 
     public void setWeight(double weight) {
@@ -118,6 +155,10 @@ public class User {
         System.out.println("Height: " + height);
         System.out.println("Sex: " + sex);
         System.out.println("ActivityLevel: " + ActivityLevel);
+        Micros.PrintAllMicros(micronutrientData);
+        System.out.println("Protein: " + getProteinGrams());
+        System.out.println("Carb: " + getCarbGrams());
+        System.out.println("Fat: " + getFatGrams());
     }
 
 

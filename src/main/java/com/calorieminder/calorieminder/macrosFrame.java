@@ -1,5 +1,6 @@
 package com.calorieminder.calorieminder;
 
+import com.calorieminder.calorieminder.Model.BMIRCalculator;
 import com.calorieminder.calorieminder.Model.DeficiencyCalculator;
 import com.calorieminder.calorieminder.Model.User;
 import javafx.application.Application;
@@ -11,8 +12,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class macrosFrame extends HelloController {
+    private DeficiencyCalculator deficiencyCalculator;
+
     //ONPAGE VARIABLES
     @FXML
     private Text Protein;
@@ -52,8 +56,40 @@ public class macrosFrame extends HelloController {
     protected void moveToWeightTrendPage(ActionEvent event) throws IOException {
         super.moveToWeightTrendPage(event);
     }
+    @FXML
+    private void initialize() {
+        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df2 = new DecimalFormat("#.###");
+    Protein.setText("Protein: " + df.format(user.getProteinGrams()) + " g");
+    Carbs.setText("Carbs: " + df.format(user.getCarbGrams()) + " g");
+    Fat.setText("Fat: " + df.format(user.getFatGrams()) + " g");
+    BMI.setText("BMI: " + String.valueOf(df.format(BMIRCalculator.calculateBMI(user.getHeight()*0.0254,user.getWeight()))));
+
+    }
+
+/*
+    public void presetBMIR(User user){
+        // Calculate BMI using BMIRCalculator
+        BMIRCalculator bmirCalculator = new BMIRCalculator();
+        String bmi = BMI.getText();
+        String bmr = BMR.getText();
+        BMI.setText(bmi + bmirCalculator.calculateBMI(user.getWeight(), user.getHeight()));
+        System.out.println(bmi + bmirCalculator.calculateBMI(user.getWeight(), user.getHeight()));
+        // Calculate BMR using BMIRCalculator
+         if (user.getSex() == 'M' || user.getSex() == 'm') {
+             BMR.setText(bmr + bmirCalculator.calculateBMRMen(user.getWeight(), user.getHeight(), user.getAge()));
+          } else {
+             BMR.setText(bmr + bmirCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge()));
+         }
+    }
+
+
+
     //NOTE: USER CLASS IN THIS FUNCTION TBD (Probably going to be replaced with a Macros File)
-    private void addInfo(User user, DeficiencyCalculator deficiencyCalculator){
+    //THIS CLASS WILL BE USED IN TANDEM WHEN THE ADD BUTTON FUNCTION IS IMPLEMENTED
+    public void addInfo(User user, DeficiencyCalculator deficiencyCalculator){
+        this.user = user;
+        this.deficiencyCalculator = deficiencyCalculator;
         //TAKE ALL TEXTS AND OBTAIN STRINGS FROM THEM
         String P = Protein.getText();
         String C = Carbs.getText();
@@ -97,11 +133,16 @@ public class macrosFrame extends HelloController {
             storeFats = user.getFatGrams();
         }
 
-        //BMI TEXT STORAGE
-            //storeBMI = *Get BMI Calculation Function*;
+        // Calculate BMI using BMIRCalculator
+        //BMIRCalculator bmirCalculator = new BMIRCalculator();
+       // storeBMI = bmirCalculator.calculateBMI(user.getWeight(), user.getHeight());
 
-        //BMR TEXT STORAGE
-            //storeBMR = *Get BMR Calculation Function*;
+        // Calculate BMR using BMIRCalculator
+       // if (user.getSex() == 'M' || user.getSex() == 'm') {
+       //     storeBMR = bmirCalculator.calculateBMRMen(user.getWeight(), user.getHeight(), user.getAge());
+      //  } else {
+       //     storeBMR = bmirCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge());
+       // }
 
         if(!WATERparse[1].isEmpty()){
             double waterLeft = Double.parseDouble(WATERparse[1]);
@@ -115,8 +156,10 @@ public class macrosFrame extends HelloController {
         Carbs.setText(Cparse[0] + ": " + storeCarbs + "out of: " + deficiencyCalculator.getCarbs() + " (" + storeCarbs + "|" + deficiencyCalculator.getCarbs() + ")" + "Percentage Reached: " + carbsPercent + "%");
         double fatPercent = (storeFats/deficiencyCalculator.getFats()) * 100;
         Fat.setText(Fparse[0] + ": " + storeFats + "out of: " + deficiencyCalculator.getFats() + " (" + storeFats + "|" + deficiencyCalculator.getFats() + ")" + "Percentage Reached: " + fatPercent + "%");
-        //BMI.setText(BIparse[0] + ": " + storeBMI);
-       // BMR.setText(BRparse[0] + ": " + storeBMR);
+        BMI.setText(BIparse[0] + ": ");
+        BMR.setText(BRparse[0] + ": ");
         WaterLeft.setText(WATERparse[0] + ": " + storeWaterLeft);
     }
+    */
 }
+
