@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
         controller.addFt();
         controller.addIn();
         controller.addActivities();
-        controller.addSex();
+        controller.addSex(); //adds sex
 
     }
 

@@ -116,7 +116,7 @@ public class HelloController {
     @FXML
     private ComboBox<String> activity;
     @FXML
-    private ComboBox<String> sex;
+    private ComboBox<String> sex; //adds sex
 
     @FXML
     void addFt()
