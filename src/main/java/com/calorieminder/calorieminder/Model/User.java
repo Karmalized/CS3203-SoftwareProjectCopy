@@ -3,13 +3,16 @@ package com.calorieminder.calorieminder.Model;
 //This class stores all relevant user data for the app (in the scope of 1 day)
 public class User {
     //stores every micronutrient for the user
-    private Micros micronutrientData;
+    private Micros micronutrientData = new Micros();
 
     //stores an array containing Month, Day, Year of birthday
     private int[] Birthday = {1,1,1999};
 
     //weight of the user in pounds
     private double weight;
+
+    //height of the user in inches
+    private double height;
 
     //contains the sex of the user (either M or F)
     private char sex;
@@ -46,6 +49,10 @@ public class User {
     public int[] getBirthday() {
         return Birthday;
     }
+//NOTE: THIS GETTER WILL CONVERT BIRTHDAY INTO AN ACTUAL AGE AMOUNT FOR MANIPULATION FROM THE CALCULATORS
+//    public int getAge(){
+//
+//    }
 
     public void setWeight(double weight) {
         this.weight = weight;
@@ -53,6 +60,12 @@ public class User {
     public double getWeight() {
         return weight;
     }
+    public void setHeight(double height) {this.height = height; }
+    public double getHeight() { return height;}
+    public int getActivityLevel() {return ActivityLevel;}
+    public void setActivityLevel(int ActivityLevel) {this.ActivityLevel = ActivityLevel;}
+    public void setSex(char sex) {this.sex = sex;}
+    public char getSex() {return sex;}
     public double getProteinGrams() {
         return proteinGrams;
     }
@@ -78,7 +91,45 @@ public class User {
         this.waterML = waterML;
     }
 
+    //this method adds the micros from a new micros object to the current user's total micros
+    public void updateMicros(Micros micronutrientData) {
+        this.micronutrientData.setVitaminA(this.micronutrientData.getVitaminA() + micronutrientData.getVitaminA());
+        this.micronutrientData.setVitaminB1(this.micronutrientData.getVitaminB1() + micronutrientData.getVitaminB1());
+        this.micronutrientData.setVitaminB2(this.micronutrientData.getVitaminB2() + micronutrientData.getVitaminB2());
+        this.micronutrientData.setVitaminB3(this.micronutrientData.getVitaminB3() + micronutrientData.getVitaminB3());
+        this.micronutrientData.setVitaminB5(this.micronutrientData.getVitaminB5() + micronutrientData.getVitaminB5());
+        this.micronutrientData.setVitaminB6(this.micronutrientData.getVitaminB6() + micronutrientData.getVitaminB6());
+        this.micronutrientData.setVitaminB9(this.micronutrientData.getVitaminB9() + micronutrientData.getVitaminB9());
+        this.micronutrientData.setVitaminB12(this.micronutrientData.getVitaminB12() + micronutrientData.getVitaminB12());
+        this.micronutrientData.setSodium(this.micronutrientData.getSodium() + micronutrientData.getSodium());
+        this.micronutrientData.setVitaminC(this.micronutrientData.getVitaminC() + micronutrientData.getVitaminC());
+        this.micronutrientData.setVitaminD(this.micronutrientData.getVitaminD() + micronutrientData.getVitaminD());
+        this.micronutrientData.setVitaminE(this.micronutrientData.getVitaminE() + micronutrientData.getVitaminE());
+        this.micronutrientData.setVitaminK(this.micronutrientData.getVitaminK() + micronutrientData.getVitaminK());
+        this.micronutrientData.setCalcium(this.micronutrientData.getCalcium() + micronutrientData.getCalcium());
+        this.micronutrientData.setPhosphorus(this.micronutrientData.getPhosphorus() + micronutrientData.getPhosphorus());
+        this.micronutrientData.setMagnesium(this.micronutrientData.getMagnesium() + micronutrientData.getMagnesium());
+        this.micronutrientData.setIron(this.micronutrientData.getIron() + micronutrientData.getIron());
+        this.micronutrientData.setZinc(this.micronutrientData.getZinc() + micronutrientData.getZinc());
+        this.micronutrientData.setCopper(this.micronutrientData.getCopper() + micronutrientData.getCopper());
+        this.micronutrientData.setPotassium(this.micronutrientData.getPotassium() + micronutrientData.getPotassium());
+    }
 
+    //Prints all values for testing
+    public void printAll()
+    {
+        System.out.println("Birthyear: " + Birthday[0]);
+        System.out.println("Birthmonth: " + Birthday[1]);
+        System.out.println("Birthday: " + Birthday[2]);
+        System.out.println("Weight: " + weight);
+        System.out.println("Height: " + height);
+        System.out.println("Sex: " + sex);
+        System.out.println("ActivityLevel: " + ActivityLevel);
+        Micros.PrintAllMicros(micronutrientData);
+        System.out.println("Protein: " + getProteinGrams());
+        System.out.println("Carb: " + getCarbGrams());
+        System.out.println("Fat: " + getFatGrams());
+    }
 
 
 

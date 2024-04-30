@@ -11,11 +11,15 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("CalorieMinderIntroPage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Welcome!");
         stage.setScene(scene);
         stage.show();
-
+        welcomeFrame start = fxmlLoader.getController();
+        start.addFt();
+        start.addIn();
+        start.addActivities();
+        start.addSex(); //adds sex
     }
 
     public static void main(String[] args) {
