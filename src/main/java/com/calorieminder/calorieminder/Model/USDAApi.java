@@ -6,6 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Arrays;
+import org.json.simple.parser.JSONParser;
 
 //class for making API calls to USDA and retrieving data
 public class USDAApi {
@@ -24,13 +25,16 @@ public class USDAApi {
 
         HttpResponse<String> response;
 
-        //TODO parse JSON response to extract micronutrient values (https://code.google.com/archive/p/json-simple/)
+
         try {
             response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body());
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
+        //TODO parse JSON response to extract micronutrient values (https://code.google.com/archive/p/json-simple/)
+        JSONParser parser = new JSONParser();
+
         return new Micros();
     }
 
