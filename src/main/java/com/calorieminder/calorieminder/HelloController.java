@@ -99,6 +99,8 @@ public class HelloController {
         Scene scene = new Scene(main.load(), 725, 500);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
+        weightTrendFrame weightTrendFrame = main.getController();
+        weightTrendFrame.addData();
         currentWindow.show();
     }
 

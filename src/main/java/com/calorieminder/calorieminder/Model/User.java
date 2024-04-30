@@ -1,6 +1,7 @@
 package com.calorieminder.calorieminder.Model;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 
 //This class stores all relevant user data for the app (in the scope of 1 day)
 public class User {
@@ -12,6 +13,8 @@ public class User {
 
     //weight of the user in pounds
     private double weight;
+
+    private ArrayList<Double> weightList = new ArrayList<>();
 
     //height of the user in inches
     private double height;
@@ -77,10 +80,19 @@ public class User {
 
     public void setWeight(double weight) {
         this.weight = weight;
+        addWeight(this.weight);
     }
     public double getWeight() {
         return weight;
     }
+    public void addWeight(double weight) {
+        weightList.add(weight);
+    }
+
+    public ArrayList<Double> getWeightList() {
+        return weightList;
+    }
+
     public void setHeight(double height) {this.height = height; }
     public double getHeight() { return height;}
     public int getActivityLevel() {return ActivityLevel;}
@@ -151,6 +163,7 @@ public class User {
         System.out.println("Carb: " + getCarbGrams());
         System.out.println("Fat: " + getFatGrams());
         System.out.println("Water Consumed: " + getWaterML());
+        System.out.println("All previous weights: " + weightList);
     }
 
 

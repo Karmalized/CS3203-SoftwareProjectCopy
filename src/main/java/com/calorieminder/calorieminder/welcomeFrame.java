@@ -99,7 +99,6 @@ public class  welcomeFrame extends HelloController {
 
             //Birthday
             String birthday = String.valueOf(Birthday.getValue());
-            System.out.println(birthday);
             String[] birthdayStringArray = birthday.split("-");
             int[] birthdayIntArray = new int[3];
             birthdayIntArray[0] = Integer.parseInt(birthdayStringArray[0]);
