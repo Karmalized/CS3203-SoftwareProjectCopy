@@ -67,7 +67,7 @@ public class macrosFrame extends HelloController {
         } else {
             BMR.setText("BMR: " + BMIRCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge()));
         }
-        WaterIntake.setText("Water Intake: " + user.getWaterML() + " ML");
+        WaterIntake.setText("Water Intake: " + user.getWaterML() + " mL");
     }
 
 
