@@ -36,7 +36,6 @@ public class HelloController {
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
-
     }
 
     @FXML
@@ -46,6 +45,7 @@ public class HelloController {
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
+
     }
 
     @FXML

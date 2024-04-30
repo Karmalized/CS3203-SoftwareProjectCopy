@@ -5,7 +5,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calorieminder.calorieminder.microsFrame">
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calorieminder.calorieminder.microsFrame">
    <children>
       <Text fx:id="A" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin A (mcg): " />
       <Text fx:id="B1" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B1 (mcg): " />
@@ -28,25 +29,25 @@
       <Text fx:id="B3" layoutX="14.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B3 (Niacin) (mcg): " />
       <Text fx:id="B2" layoutX="14.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B2 (mcg): " />
       <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#moveToMainPage" text="Back" />
-      <Label fx:id="vitaminALabel" layoutX="110.0" layoutY="15.0" text="Label" />
-      <Label fx:id="vitaminB1Label" layoutX="110.0" layoutY="30.0" text="Label" />
-      <Label fx:id="vitaminB2Label" layoutX="110.0" layoutY="47.0" text="Label" />
-      <Label fx:id="vitaminB3Label" layoutX="154.0" layoutY="63.0" text="Label" />
-      <Label fx:id="vitaminB5Label" layoutX="110.0" layoutY="79.0" text="Label" />
-      <Label fx:id="vitaminB6Label" layoutX="110.0" layoutY="95.0" text="Label" />
-      <Label fx:id="vitaminB9Label" layoutX="110.0" layoutY="111.0" text="Label" />
-      <Label fx:id="vitaminB12Label" layoutX="117.0" layoutY="127.0" text="Label" />
-      <Label fx:id="vitaminCLabel" layoutX="101.0" layoutY="144.0" text="Label" />
-      <Label fx:id="vitaminDLabel" layoutX="110.0" layoutY="159.0" text="Label" />
-      <Label fx:id="vitaminELabel" layoutX="97.0" layoutY="175.0" text="Label" />
-      <Label fx:id="vitaminKLabel" layoutX="103.0" layoutY="192.0" text="Label" />
-      <Label fx:id="calciumLabel" layoutX="90.0" layoutY="208.0" text="Label" />
-      <Label fx:id="phosphorusLabel" layoutX="111.0" layoutY="223.0" text="Label" />
-      <Label fx:id="magnesiumLabel" layoutX="111.0" layoutY="239.0" text="Label" />
-      <Label fx:id="ironLabel" layoutX="70.0" layoutY="255.0" text="Label" />
-      <Label fx:id="zincLabel" layoutX="70.0" layoutY="271.0" text="Label" />
-      <Label fx:id="copperLabel" layoutX="92.0" layoutY="287.0" text="Label" />
-      <Label fx:id="potassiumLabel" layoutX="101.0" layoutY="303.0" text="Label" />
-      <Label fx:id="sodiumLabel" layoutX="88.0" layoutY="319.0" text="Label" />
+      <Label fx:id="vitaminALabel" layoutX="175.0" layoutY="15.0" text="Label" />
+      <Label fx:id="vitaminB1Label" layoutX="175.0" layoutY="30.0" text="Label" />
+      <Label fx:id="vitaminB2Label" layoutX="175.0" layoutY="47.0" text="Label" />
+      <Label fx:id="vitaminB3Label" layoutX="175.0" layoutY="63.0" text="Label" />
+      <Label fx:id="vitaminB5Label" layoutX="175.0" layoutY="79.0" text="Label" />
+      <Label fx:id="vitaminB6Label" layoutX="175.0" layoutY="95.0" text="Label" />
+      <Label fx:id="vitaminB9Label" layoutX="175.0" layoutY="111.0" text="Label" />
+      <Label fx:id="vitaminB12Label" layoutX="175.0" layoutY="127.0" text="Label" />
+      <Label fx:id="vitaminCLabel" layoutX="175.0" layoutY="144.0" text="Label" />
+      <Label fx:id="vitaminDLabel" layoutX="175.0" layoutY="159.0" text="Label" />
+      <Label fx:id="vitaminELabel" layoutX="175.0" layoutY="175.0" text="Label" />
+      <Label fx:id="vitaminKLabel" layoutX="175.0" layoutY="192.0" text="Label" />
+      <Label fx:id="calciumLabel" layoutX="175.0" layoutY="208.0" text="Label" />
+      <Label fx:id="phosphorusLabel" layoutX="175.0" layoutY="223.0" text="Label" />
+      <Label fx:id="magnesiumLabel" layoutX="175.0" layoutY="239.0" text="Label" />
+      <Label fx:id="ironLabel" layoutX="175.0" layoutY="255.0" text="Label" />
+      <Label fx:id="zincLabel" layoutX="175.0" layoutY="271.0" text="Label" />
+      <Label fx:id="copperLabel" layoutX="175.0" layoutY="287.0" text="Label" />
+      <Label fx:id="potassiumLabel" layoutX="175.0" layoutY="303.0" text="Label" />
+      <Label fx:id="sodiumLabel" layoutX="175.0" layoutY="319.0" text="Label" />
    </children>
-</Pane>
+</AnchorPane>
