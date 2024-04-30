@@ -17,9 +17,9 @@ import javafx.scene.control.Slider;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class  welcomeFrame extends HelloController {
-    private User user;
     private DeficiencyCalculator deficiencyCalculator;
 
     // INTRO PAGE FUNCTIONS
@@ -81,41 +81,55 @@ public class  welcomeFrame extends HelloController {
 
         //Save data currently on intro page
         //Weight
-        double weight = Weight_lbs.getValue();
+            user.setWeight(Weight_lbs.getValue());
         //Height
         String ftString = heightFt.getValue();
-        int ft = Integer.parseInt(ftString);
-        ft = ft * 12;
         String inString = heightIn.getValue();
-        int in = Integer.parseInt(inString);
-        double height = ft + in;
+        if (ftString != null && inString != null) {
+            int ft = Integer.parseInt(ftString);
+            ft = ft * 12;
+            int in = Integer.parseInt(inString);
+            double height = ft + in;
+            user.setHeight(height);
+        }
+
+
 
         //Birthday
         String birthday = String.valueOf(Birthday.getValue());
-        String[] birthdayStringArray = birthday.split("-");
-        int[] birthdayIntArray = new int[3];
-        birthdayIntArray[0] = Integer.parseInt(birthdayStringArray[0]);
-        birthdayIntArray[1] = Integer.parseInt(birthdayStringArray[1]);
-        birthdayIntArray[2] = Integer.parseInt(birthdayStringArray[2]);
+        if (birthday != null) {
+            String[] birthdayStringArray = birthday.split("-");
+            int[] birthdayIntArray = new int[3];
+            birthdayIntArray[0] = Integer.parseInt(birthdayStringArray[0]);
+            birthdayIntArray[1] = Integer.parseInt(birthdayStringArray[1]);
+            birthdayIntArray[2] = Integer.parseInt(birthdayStringArray[2]);
+            user.setBirthday(birthdayIntArray);
+        }
 
         //Activity
         String activityString = activity.getValue();
-        int activityInt = Integer.parseInt(activityString);
+        if (activityString != null) {
+            int activityInt = Integer.parseInt(activityString);
+            user.setActivityLevel(activityInt);
+        }
 
         //Sex
         String sexString = sex.getValue();
-        char sexChar = sexString.charAt(0);
+        if (sexString != null) {
+            char sexChar = sexString.charAt(0);
+            user.setSex(sexChar);
+        }
 
-        //Save everything to User class
-        User newUser = new User();
-        newUser.setWeight(weight);
-        newUser.setHeight(height);
-        newUser.setBirthday(birthdayIntArray);
-        newUser.setActivityLevel(activityInt);
-        newUser.setSex(sexChar);
+        moveToMainPage(event);
+        //For Testing
+        /*
+        System.out.println("Weight " + user.getWeight());
+        System.out.println("Sex " + user.getSex());
+        System.out.println("Height " + user.getHeight());
+        System.out.println("Birthday " + Arrays.toString(user.getBirthday()));
+        System.out.println("ActivityLevel " + user.getActivityLevel());
+        */
 
-        DeficiencyCalculator newUserCalc = new DeficiencyCalculator();
-        newUserCalc.calculateTDEE(newUser.getWeight(), newUser.getHeight(), newUser.getAge(), newUser.getSex(), newUser.getActivityLevel());
     }
 
     @Override //SUPERCLASS CALL FOR TRANSITIONS
