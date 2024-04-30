@@ -4,17 +4,14 @@ package com.calorieminder.calorieminder.Model;
 public class Water {
 
     //ant volumes
-    final float cup = 240;
-    final float plasticWaterBottle = 500;
-    final float waterBottle1 = 750;
-    final float waterBottle2 = 1000;
+
     //updated variables
     float waterPerDay = 0;
     float waterConsumed = 0;
 
-    //inputs the user weight in lbs and activity level 1-5
+    //inputs the user weight in lbs and activity level 1-5, outputs water consumption necessary in mL
     void waterPerDayCalc(float weight, int activityLevel) {
-        waterPerDay = (float) ((0.6 * weight + 8 * activityLevel) * 29.5735);
+        waterPerDay = (float) ((0.453592 * weight) * 0.03 + activityLevel*0.2)*1000;
     }
 
     // inputs the water needed to consume a day and water already consumed, returns percent of daily intake completed
@@ -23,7 +20,14 @@ public class Water {
     }
 
     //update the water consumed
-    void updateWaterConsumed(float volumeConsumed) {
-        waterConsumed += volumeConsumed;
+    void updateWaterConsumed(float volumeConsumed, String unit)
+    {
+        switch (unit) {
+            case "mL":
+                waterConsumed += volumeConsumed;
+                break;
+            case "oz":
+                waterConsumed += volumeConsumed*29.5735;
+        }
     }
 }
