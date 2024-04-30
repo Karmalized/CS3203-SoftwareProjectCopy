@@ -13,22 +13,22 @@ public class User {
     private int[] Birthday = {1,1,1999};
 
     //weight of the user in pounds
-    private double weight;
+    private double weight = 0;
 
     //height of the user in inches
-    private double height;
+    private double height = 0;
 
     //contains the sex of the user (either M or F)
-    private char sex;
+    private char sex = 'M';
 
     //contains the activity level of the user from 1 to 5
-    private int ActivityLevel;
+    private int ActivityLevel = 1;
 
     //calories that the user burns without moving
-    private double BMR;
+    private double BMR = 0;
 
     //Body Mass Index of the User
-    private double BMI;
+    private double BMI = 0;
 
 
     //Macronutrient intake of the User
