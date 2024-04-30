@@ -1,8 +1,7 @@
 package com.calorieminder.calorieminder.Model;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.LocalDateTime.*;
-import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.ArrayList;
 
 //This class stores all relevant user data for the app (in the scope of 1 day)
 public class User {
@@ -14,6 +13,8 @@ public class User {
 
     //weight of the user in pounds
     private double weight;
+
+    private ArrayList<Double> weightList = new ArrayList<>();
 
     //height of the user in inches
     private double height;
@@ -30,6 +31,7 @@ public class User {
     //Body Mass Index of the User
     private double BMI;
 
+    private double Age;
 
     //Macronutrient intake of the User
     private double proteinGrams ;
@@ -52,7 +54,7 @@ public class User {
         carbGrams = 0;
         fatGrams = 0;
         waterML = 0;
-
+        Age = 0;
 
 
     }
@@ -70,26 +72,27 @@ public class User {
         return Birthday;
     }
 //NOTE: THIS GETTER WILL CONVERT BIRTHDAY INTO AN ACTUAL AGE AMOUNT FOR MANIPULATION FROM THE CALCULATORS
-    public double getAge(){
-        LocalDateTime currentSystemTime = LocalDateTime.now();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String formattedDate = dateFormat.format(currentSystemTime);
-        int[] currentTime = new int[3];
-        String[] currentTimeText = formattedDate.split("-");
-        currentTime[0] = Integer.parseInt(currentTimeText[0]);
-        currentTime[1] = Integer.parseInt(currentTimeText[1]);
-        currentTime[2] = Integer.parseInt(currentTimeText[2]);
-        int ageDays = ((currentTime[0]-Birthday[0]) * 365) + Math.abs((currentTime[1]-Birthday[1])* 30) + Math.abs((currentTime[2]-Birthday[2]));
-        double ageYears = ageDays / 365;
-        return ageYears;
+    public void setAge(int[] Birthday){
+        LocalDate birthday = LocalDate.of(Birthday[0],Birthday[1],Birthday[2]);
+        LocalDate currentTime = LocalDate.now();
+        Age = (double)Period.between(birthday,currentTime).getYears();
     }
 
     public void setWeight(double weight) {
         this.weight = weight;
+        addWeight(this.weight);
     }
     public double getWeight() {
         return weight;
     }
+    public void addWeight(double weight) {
+        weightList.add(weight);
+    }
+
+    public ArrayList<Double> getWeightList() {
+        return weightList;
+    }
+
     public void setHeight(double height) {this.height = height; }
     public double getHeight() { return height;}
     public int getActivityLevel() {return ActivityLevel;}
@@ -120,7 +123,7 @@ public class User {
     public void setWaterML(double waterML) {
         this.waterML = waterML;
     }
-
+    public double getAge(){return Age;}
     //this method adds the micros from a new micros object to the current user's total micros
     public void updateMicros(Micros micronutrientData) {
         this.micronutrientData.setVitaminA(this.micronutrientData.getVitaminA() + micronutrientData.getVitaminA());
@@ -159,6 +162,8 @@ public class User {
         System.out.println("Protein: " + getProteinGrams());
         System.out.println("Carb: " + getCarbGrams());
         System.out.println("Fat: " + getFatGrams());
+        System.out.println("Water Consumed: " + getWaterML());
+        System.out.println("All previous weights: " + weightList);
     }
 
 

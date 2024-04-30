@@ -116,6 +116,8 @@ public class  welcomeFrame extends HelloController {
             char sexChar = sexString.charAt(0);
             user.setSex(sexChar);
 
+            user.setAge(birthdayIntArray);
+
             moveToMainPage(event);
         }
         catch (Exception e) {

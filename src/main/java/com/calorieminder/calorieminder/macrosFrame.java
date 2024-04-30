@@ -3,6 +3,7 @@ package com.calorieminder.calorieminder;
 import com.calorieminder.calorieminder.Model.BMIRCalculator;
 import com.calorieminder.calorieminder.Model.DeficiencyCalculator;
 import com.calorieminder.calorieminder.Model.User;
+import com.calorieminder.calorieminder.Model.Water;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +13,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
 
 public class macrosFrame extends HelloController {
     private DeficiencyCalculator deficiencyCalculator;
@@ -29,7 +29,7 @@ public class macrosFrame extends HelloController {
     @FXML
     private Text BMR;
     @FXML
-    private Text WaterLeft;
+    private Text WaterNeeded;
 
     //SUPERCLASS CALLS FOR TRANSITION PAGES (BUTTONS)
     @Override
@@ -58,14 +58,18 @@ public class macrosFrame extends HelloController {
     }
     @FXML
     private void initialize() {
-        DecimalFormat df = new DecimalFormat("#.##");
-        DecimalFormat df2 = new DecimalFormat("##.##");
-    Protein.setText("Protein: " + df.format(user.getProteinGrams()) + " g");
-    Carbs.setText("Carbs: " + df.format(user.getCarbGrams()) + " g");
-    Fat.setText("Fat: " + df.format(user.getFatGrams()) + " g");
-    BMI.setText("BMI: " + df2.format(BMIRCalculator.calculateBMI(user.getWeight()*0.453592,user.getHeight())*0.0254));
-
+        Protein.setText("Protein: " + user.getProteinGrams() + " g");
+        Carbs.setText("Carbs: " + user.getCarbGrams() + " g");
+        Fat.setText("Fat: " + user.getFatGrams() + " g");
+        BMI.setText("BMI: " + String.format("%.2f", BMIRCalculator.calculateBMI(user.getWeight(), user.getHeight())));
+        if (user.getSex() == 'M' || user.getSex() == 'm') {
+            BMR.setText("BMR: " + BMIRCalculator.calculateBMRMen(user.getWeight(), user.getHeight(), user.getAge()));
+        } else {
+            BMR.setText("BMR: " + BMIRCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge()));
+        }
+        WaterNeeded.setText("Water RDI: " + Water.waterPerDayCalc((float) Water.getWeight(), (int) Water.getActivityLevel()) + " ml");
     }
+
 
 /*
     public void presetBMIR(User user){

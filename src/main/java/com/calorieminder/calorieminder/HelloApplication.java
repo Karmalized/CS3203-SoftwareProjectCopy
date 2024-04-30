@@ -29,6 +29,11 @@ public class HelloApplication extends Application {
         start.addIn();
         start.addActivities();
         start.addSex(); //adds sex
+        // Set the close request handler
+        stage.setOnCloseRequest(windowEvent -> {
+            // Execute your code here when the window is closing
+            System.out.println("Closing main page...");
+        });
     }
 
     public static void main(String[] args) {
