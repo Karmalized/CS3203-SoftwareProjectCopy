@@ -1,7 +1,15 @@
 package com.calorieminder.calorieminder.Model;
 
 public class DeficiencyCalculator {
+    private double carbGrams;
+    private double proteinGrams;
+    private double fatGrams;
 
+    public DeficiencyCalculator() {
+        carbGrams = 0;
+        proteinGrams = 0;
+        fatGrams = 0;
+    }
     // Function to calculate the Total Daily Energy Expenditure (TDEE) based on activity level
     double calculateTDEE(double weightLbs, int feet, int inches, int age, char gender, int activityLevel) {
         double weightKg = weightLbs * 0.453592; // Convert weight from lbs to kg
@@ -34,9 +42,9 @@ public class DeficiencyCalculator {
         double fatPercentage = 30; // 30% of total calories
 
         // Convert percentages to grams
-        double carbGrams = (carbPercentage / 100) * calories / 4;  // 4 calories per gram of carbohydrate
-        double proteinGrams = (proteinPercentage / 100) * calories / 4; // 4 calories per gram of protein
-        double fatGrams = (fatPercentage / 100) * calories / 9; // 9 calories per gram of fat
+         carbGrams = (carbPercentage / 100) * calories / 4;  // 4 calories per gram of carbohydrate
+         proteinGrams = (proteinPercentage / 100) * calories / 4; // 4 calories per gram of protein
+         fatGrams = (fatPercentage / 100) * calories / 9; // 9 calories per gram of fat
 
         // Display macronutrient recommendations
         System.out.println("\nRecommended intake of macronutrients:");
@@ -45,5 +53,14 @@ public class DeficiencyCalculator {
         System.out.println("- Fat: " + fatGrams + " grams");
     }
 
+    public double getCarbs(){
+        return carbGrams;
+    }
+    public double getProteins(){
+        return proteinGrams;
+    }
+    public double getFats(){
+        return fatGrams;
+    }
 
 }

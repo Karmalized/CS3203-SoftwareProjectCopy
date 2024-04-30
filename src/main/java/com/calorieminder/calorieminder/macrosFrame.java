@@ -1,5 +1,6 @@
 package com.calorieminder.calorieminder;
 
+import com.calorieminder.calorieminder.Model.DeficiencyCalculator;
 import com.calorieminder.calorieminder.Model.User;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -51,8 +52,8 @@ public class macrosFrame extends HelloController {
     protected void moveToWeightTrendPage(ActionEvent event) throws IOException {
         super.moveToWeightTrendPage(event);
     }
-
-    private void loadInfo(User user){
+    //NOTE: USER CLASS IN THIS FUNCTION TBD (Probably going to be replaced with a Macros File)
+    private void addInfo(User user, DeficiencyCalculator deficiencyCalculator){
         //TAKE ALL TEXTS AND OBTAIN STRINGS FROM THEM
         String P = Protein.getText();
         String C = Carbs.getText();
@@ -108,10 +109,12 @@ public class macrosFrame extends HelloController {
         } else {
             storeWaterLeft = user.getWaterML();
         }
-
-        Protein.setText(Pparse[0] + ": " + storeProteins);
-        Carbs.setText(Cparse[0] + ": " + storeCarbs);
-        Fat.setText(Fparse[0] + ": " + storeFats);
+        double proteinPercent = (storeProteins/deficiencyCalculator.getProteins()) * 100;
+        Protein.setText(Pparse[0] + ": " + storeProteins + "out of: " + deficiencyCalculator.getProteins() + " (" + storeProteins + "|" + deficiencyCalculator.getProteins() + ")" + "Percentage Reached: " + proteinPercent + "%");
+        double carbsPercent = (storeCarbs/deficiencyCalculator.getCarbs()) * 100;
+        Carbs.setText(Cparse[0] + ": " + storeCarbs + "out of: " + deficiencyCalculator.getCarbs() + " (" + storeCarbs + "|" + deficiencyCalculator.getCarbs() + ")" + "Percentage Reached: " + carbsPercent + "%");
+        double fatPercent = (storeFats/deficiencyCalculator.getFats()) * 100;
+        Fat.setText(Fparse[0] + ": " + storeFats + "out of: " + deficiencyCalculator.getFats() + " (" + storeFats + "|" + deficiencyCalculator.getFats() + ")" + "Percentage Reached: " + fatPercent + "%");
         BMI.setText(BIparse[0] + ": " + storeBMI);
         BMR.setText(BRparse[0] + ": " + storeBMR);
         WaterLeft.setText(WATERparse[0] + ": " + storeWaterLeft);
