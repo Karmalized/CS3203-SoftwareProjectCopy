@@ -36,7 +36,7 @@ public class HelloController {
     @FXML
     protected void moveToMainPage(ActionEvent event) throws IOException {
         FXMLLoader main = new FXMLLoader(getClass().getResource("macrosFrame.fxml"));
-        Scene scene = new Scene(main.load(), 600, 400);
+        Scene scene = new Scene(main.load(), 725, 500);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
@@ -45,7 +45,7 @@ public class HelloController {
     @FXML
     protected void moveToMicrosPage(ActionEvent event) throws IOException {
         FXMLLoader main = new FXMLLoader(getClass().getResource("microsFrame.fxml"));
-        Scene scene = new Scene(main.load(), 600, 400);
+        Scene scene = new Scene(main.load(), 725, 500);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
@@ -55,7 +55,7 @@ public class HelloController {
     @FXML
     protected void moveToWaterPage(ActionEvent event) throws IOException {
         FXMLLoader main = new FXMLLoader(getClass().getResource("WaterInput.fxml"));
-        Scene scene = new Scene(main.load(), 600, 400);
+        Scene scene = new Scene(main.load(), 725, 500);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         waterInputFrame waterFrame = main.getController();
@@ -66,7 +66,7 @@ public class HelloController {
     @FXML
     protected void moveToFoodPage(ActionEvent event) throws IOException {
         FXMLLoader main = new FXMLLoader(getClass().getResource("foodPage.fxml"));
-        Scene scene = new Scene(main.load(), 600, 400);
+        Scene scene = new Scene(main.load(), 725, 500);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
@@ -75,7 +75,7 @@ public class HelloController {
     @FXML
     protected void moveToIntroPage(ActionEvent event) throws IOException {
         FXMLLoader main = new FXMLLoader(getClass().getResource("CalorieMinderIntroPage.fxml"));
-        Scene scene = new Scene(main.load(), 600, 400);
+        Scene scene = new Scene(main.load(), 725, 500);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
@@ -84,7 +84,7 @@ public class HelloController {
     @FXML
     protected void moveToNewDayPage(ActionEvent event) throws IOException {
         FXMLLoader main = new FXMLLoader(getClass().getResource("Newday.fxml"));
-        Scene scene = new Scene(main.load(), 600, 400);
+        Scene scene = new Scene(main.load(), 725, 500);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
@@ -93,7 +93,7 @@ public class HelloController {
     @FXML
     protected void moveToWeightTrendPage(ActionEvent event) throws IOException {
         FXMLLoader main = new FXMLLoader(getClass().getResource("WeightTrend.fxml"));
-        Scene scene = new Scene(main.load(), 600, 400);
+        Scene scene = new Scene(main.load(), 725, 500);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();
@@ -102,7 +102,7 @@ public class HelloController {
     @FXML
     protected void moveToFoodSearchResultsPage(ActionEvent event) throws IOException {
         FXMLLoader main = new FXMLLoader(getClass().getResource("SearchResults.fxml"));
-        Scene scene = new Scene(main.load(), 600, 400);
+        Scene scene = new Scene(main.load(), 725, 500);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
         currentWindow.show();

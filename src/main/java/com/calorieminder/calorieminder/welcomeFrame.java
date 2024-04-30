@@ -19,6 +19,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 public class  welcomeFrame extends HelloController {
@@ -35,10 +36,9 @@ public class  welcomeFrame extends HelloController {
     @FXML
     void onWeightSliderChange()
     {
+        DecimalFormat df = new DecimalFormat("#.##");
         double weight = Weight_lbs.getValue();
-        double roundedWeight = Math.floor(weight * 100) / 100;
-        String weightLabelString = Double.toString(roundedWeight);
-        weightLabel.setText(weightLabelString);
+        weightLabel.setText(df.format(weight));
     }
 
     @FXML
@@ -99,6 +99,7 @@ public class  welcomeFrame extends HelloController {
 
             //Birthday
             String birthday = String.valueOf(Birthday.getValue());
+            System.out.println(birthday);
             String[] birthdayStringArray = birthday.split("-");
             int[] birthdayIntArray = new int[3];
             birthdayIntArray[0] = Integer.parseInt(birthdayStringArray[0]);
@@ -115,6 +116,8 @@ public class  welcomeFrame extends HelloController {
             String sexString = sex.getValue();
             char sexChar = sexString.charAt(0);
             user.setSex(sexChar);
+
+            user.setAge(birthdayIntArray);
 
             moveToMainPage(event);
         }
