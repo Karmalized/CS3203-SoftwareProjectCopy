@@ -18,10 +18,12 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+
 public class HelloController {
+    public static String[] searchResults;
     @FXML
     private TextField searchBar;
-    User user = new User();
+    public static User user = new User();
 
     @FXML
     private Label welcomeText;
@@ -97,8 +99,8 @@ public class HelloController {
     }
 
     @FXML
-    protected void moveToFoodSearchResultsPage(ActionEvent event, String[] results) throws IOException {
-        FXMLLoader main = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+    protected void moveToFoodSearchResultsPage(ActionEvent event) throws IOException {
+        FXMLLoader main = new FXMLLoader(getClass().getResource("SearchResults.fxml"));
         Scene scene = new Scene(main.load(), 600, 400);
         Stage currentWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         currentWindow.setScene(scene);
@@ -111,8 +113,13 @@ public class HelloController {
         for (int i = 0; i < results.length; i++) {
             System.out.println(results[i]);
         }
-        moveToFoodSearchResultsPage(actionEvent,results);
+        if (results.length == 0)
+            System.out.println("EMPTY ARRAY");
+        searchResults = results;
+        moveToFoodSearchResultsPage(actionEvent);
     }
+
+
 
 
     //Possible transition function to cater to all pages rather than make multiple methods for one
