@@ -58,17 +58,18 @@ public class macrosFrame extends HelloController {
     }
     @FXML
     private void initialize() {
-    Protein.setText("Protein: " + user.getProteinGrams() + " g");
-    Carbs.setText("Carbs: " + user.getCarbGrams() + " g");
-    Fat.setText("Fat: " + user.getFatGrams() + " g");
-    BMI.setText("BMI: " + String.format("%.2f",BMIRCalculator.calculateBMI(user.getWeight(),user.getHeight())));
+        Protein.setText("Protein: " + user.getProteinGrams() + " g");
+        Carbs.setText("Carbs: " + user.getCarbGrams() + " g");
+        Fat.setText("Fat: " + user.getFatGrams() + " g");
+        BMI.setText("BMI: " + String.format("%.2f", BMIRCalculator.calculateBMI(user.getWeight(), user.getHeight())));
         if (user.getSex() == 'M' || user.getSex() == 'm') {
             BMR.setText("BMR: " + BMIRCalculator.calculateBMRMen(user.getWeight(), user.getHeight(), user.getAge()));
         } else {
             BMR.setText("BMR: " + BMIRCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge()));
         }
-        WaterNeeded.setText("Water RDI: " + Water.waterPerDayCalc((float)Water.getWeight(), (int)Water.getActivityLevel()) + " ml");
+        WaterNeeded.setText("Water RDI: " + Water.waterPerDayCalc((float) Water.getWeight(), (int) Water.getActivityLevel()) + " oz");
     }
+
 
 /*
     public void presetBMIR(User user){
