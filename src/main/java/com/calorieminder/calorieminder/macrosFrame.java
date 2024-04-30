@@ -99,15 +99,11 @@ public class macrosFrame extends HelloController {
         if(!BIparse[1].isEmpty()){
             double bmi = Double.parseDouble(BIparse[1]);
             //storeBMI = bmi + *Get BMI Calculation Function*;
-        } else {
-            //storeBMI = *get BMI Calculation Function*;
-        }
+
 
         if(!BRparse[1].isEmpty()){
             double bmrs = Double.parseDouble(BRparse[1]);
             //storeBMI = bmi + *Get BMR Calculation Function*;
-        } else {
-            //storeBMI = *Get BMR Calculation Function*;
         }
 
         if(!WATERparse[1].isEmpty()){
