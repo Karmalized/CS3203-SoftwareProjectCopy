@@ -29,7 +29,7 @@ public class macrosFrame extends HelloController {
     @FXML
     private Text BMR;
     @FXML
-    private Text WaterNeeded;
+    private Text WaterIntake;
 
     //SUPERCLASS CALLS FOR TRANSITION PAGES (BUTTONS)
     @Override
@@ -67,7 +67,7 @@ public class macrosFrame extends HelloController {
         } else {
             BMR.setText("BMR: " + BMIRCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge()));
         }
-        WaterNeeded.setText("Water RDI: " + Water.waterPerDayCalc((float) Water.getWeight(), (int) Water.getActivityLevel()) + " ml");
+        WaterIntake.setText("Water Intake: " + user.getWaterML() + " ML");
     }
 
 
