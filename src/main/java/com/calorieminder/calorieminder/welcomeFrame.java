@@ -14,12 +14,16 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Arrays;
 
 public class  welcomeFrame extends HelloController {
+    @FXML
+    public Text ErrorIntro;
     private DeficiencyCalculator deficiencyCalculator;
 
     // INTRO PAGE FUNCTIONS
@@ -78,49 +82,46 @@ public class  welcomeFrame extends HelloController {
 
     @FXML
     void onIntroPageLeave(ActionEvent event) throws IOException {
+        try {
 
-        //Save data currently on intro page
-        //Weight
+            //Save data currently on intro page
+            //Weight
             user.setWeight(Weight_lbs.getValue());
-        //Height
-        String ftString = heightFt.getValue();
-        String inString = heightIn.getValue();
-        if (ftString != null && inString != null) {
+            //Height
+            String ftString = heightFt.getValue();
+            String inString = heightIn.getValue();
             int ft = Integer.parseInt(ftString);
             ft = ft * 12;
             int in = Integer.parseInt(inString);
             double height = ft + in;
             user.setHeight(height);
-        }
 
 
-
-        //Birthday
-        String birthday = String.valueOf(Birthday.getValue());
-        if (birthday != null) {
+            //Birthday
+            String birthday = String.valueOf(Birthday.getValue());
             String[] birthdayStringArray = birthday.split("-");
             int[] birthdayIntArray = new int[3];
             birthdayIntArray[0] = Integer.parseInt(birthdayStringArray[0]);
             birthdayIntArray[1] = Integer.parseInt(birthdayStringArray[1]);
             birthdayIntArray[2] = Integer.parseInt(birthdayStringArray[2]);
             user.setBirthday(birthdayIntArray);
-        }
 
-        //Activity
-        String activityString = activity.getValue();
-        if (activityString != null) {
+            //Activity
+            String activityString = activity.getValue();
             int activityInt = Integer.parseInt(activityString);
             user.setActivityLevel(activityInt);
-        }
 
-        //Sex
-        String sexString = sex.getValue();
-        if (sexString != null) {
+            //Sex
+            String sexString = sex.getValue();
             char sexChar = sexString.charAt(0);
             user.setSex(sexChar);
-        }
 
-        moveToMainPage(event);
+            moveToMainPage(event);
+        }
+        catch (Exception e) {
+            ErrorIntro.setFill(Color.RED);
+            ErrorIntro.setText("INPUT ERROR");
+        }
         //For Testing
         /*
         System.out.println("Weight " + user.getWeight());
