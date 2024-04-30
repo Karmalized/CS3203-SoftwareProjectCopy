@@ -18,12 +18,13 @@ import java.util.ArrayList;
 public class HelloController {
     @FXML
     private Label welcomeText;
-
+    //OUTDATED
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to CalorieMinder!");
     }
 
+    //BUTTON TRANSITION FUNCTIONS
     @FXML
     protected void moveToMainPage(ActionEvent event) throws IOException {
         FXMLLoader main = new FXMLLoader(getClass().getResource("macrosFrame.fxml"));
