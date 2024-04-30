@@ -1,5 +1,7 @@
 package com.calorieminder.calorieminder.Model;
 
+import org.json.simple.parser.JSONParser;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -24,13 +26,16 @@ public class USDAApi {
 
         HttpResponse<String> response;
 
-        //TODO parse JSON response to extract micronutrient values (https://code.google.com/archive/p/json-simple/)
+
         try {
             response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body());
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
+        //TODO parse JSON response to extract micronutrient values (https://code.google.com/archive/p/json-simple/)
+        JSONParser parser = new JSONParser();
+
         return new Micros();
     }
 
