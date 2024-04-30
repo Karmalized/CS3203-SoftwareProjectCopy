@@ -72,7 +72,7 @@ public class USDAApi {
         return;
     }
 
-    public JSONObject getFoodsByName(String food) {
+    public JSONObject getFoodsJSONByName(String food) {
 
         //remove illegal characters from string
         food = food.replaceAll("[^a-zA-Z\\s]", "");
@@ -87,8 +87,8 @@ public class USDAApi {
         try {
             response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
             JSONObject jsonObject = (JSONObject) new JSONParser().parse(response.body());
-            System.out.println("Total Hits: " + jsonObject.get("totalHits").toString());
-            System.out.println(response.body());
+            //System.out.println("Total Hits: " + jsonObject.get("totalHits").toString());
+            //System.out.println(response.body());
             return jsonObject;
         }
         catch (InterruptedException | IOException | ParseException e) {
@@ -97,14 +97,47 @@ public class USDAApi {
         return new JSONObject();
     }
 
+    public String[] getFoodsStringByName(String food) {
+        JSONObject foodInformation = getFoodsJSONByName(food);
+        //JSONObject -> foods (JSONArray) -> Description
+        JSONArray foodsList = (JSONArray) foodInformation.get("foods");
+        String[] foodNames = new String[foodsList.size()];
+
+        //increment through foods list and add names of food to array of strings
+        for (int i = 0; i < foodsList.size(); i++) {
+            foodNames[i] = ((JSONObject)(foodsList.get(i))).get("description").toString();
+        }
+        return foodNames;
+    }
+
+    public int[] getFoodsIDByName(String food) {
+        JSONObject foodInformation = getFoodsJSONByName(food);
+        //JSONObject -> foods (JSONArray) -> fdcID
+        JSONArray foodsList = (JSONArray) foodInformation.get("foods");
+        int[] foodIDs = new int[foodsList.size()];
+        for (int i = 0; i < foodsList.size(); i++) {
+            foodIDs[i] = Integer.parseInt(((JSONObject)(foodsList.get(i))).get("fdcId").toString());
+        }
+        return foodIDs;
+    }
+
      //FOR TESTING
+
+    /*
     public static void main(String[] args) {
         USDAApi api = new USDAApi();
         User x = new User();
         api.addFoodById(1750342,x);
         api.addFoodById(2262074,x);
 
-        api.getFoodsByName("Cheddar Cheese*(+=-!~~|");
+        String[] test = api.getFoodsStringByName("Cheddar Cheese");
+        int[] test2 = api.getFoodsIDByName("Cheddar Cheese");
+        for (int i = 0; i < test2.length; i++) {
+            System.out.println(test[i] + " " + test2[i]);
+        }
+
+
     }
+     */
 
 }
