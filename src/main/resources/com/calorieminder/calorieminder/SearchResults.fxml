@@ -14,6 +14,8 @@
         <Button layoutX="385.0" layoutY="266.0" mnemonicParsing="false" text="Add" onAction="#updateInfo"/>
         <Button layoutX="147.0" layoutY="266.0" mnemonicParsing="false" text="Cancel" onAction="#moveToMainPage"/>
         <Text layoutX="400.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input Weight (g):" />
+        <Text layoutX="400.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input Weight (g):" />
+        <Text layoutX="385.0" layoutY="240" strokeType="OUTSIDE" strokeWidth="0.0" text="" fx:id="ErrorTextSearchResults" />
         <Text layoutX="150.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Results:" wrappingWidth="89.43310546875" />
     </children>
 </Pane>

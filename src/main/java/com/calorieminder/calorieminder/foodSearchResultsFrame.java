@@ -9,6 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,6 +18,8 @@ import java.text.DecimalFormat;
 
 public class foodSearchResultsFrame extends HelloController {
 
+    @FXML
+    private Text ErrorTextSearchResults;
     @FXML
     private TextField weightInputFood;
     @FXML
@@ -27,13 +31,23 @@ public class foodSearchResultsFrame extends HelloController {
     }
 
     @FXML
-    protected void updateInfo(ActionEvent event) throws IOException {
-        String choice = SearchChoices.getValue();
-        double weight = Double.parseDouble(weightInputFood.getText());
-        USDAApi usdaApi = new USDAApi();
-        usdaApi.addFoodById(usdaApi.getFoodsIDByName(choice)[0],user,weight);
-        moveToMainPage(event);
-    }
+    protected void updateInfo(ActionEvent event) throws IOException, Exception {
+        try {
+            String choice = SearchChoices.getValue();
+            double weight = Double.parseDouble(weightInputFood.getText());
+            if (weight < 0 ) {
+                throw new Exception();
+            }
+            USDAApi usdaApi = new USDAApi();
+            usdaApi.addFoodById(usdaApi.getFoodsIDByName(choice)[0], user, weight);
+            moveToMainPage(event);
+        }
+        catch(Exception e) {
+            ErrorTextSearchResults.setFill(Color.RED);
+            ErrorTextSearchResults.setText("Invalid Input");
+        }
+
+        }
 
     public void initialize() {
         for (int i = 0; i < searchResults.length; i++) {
