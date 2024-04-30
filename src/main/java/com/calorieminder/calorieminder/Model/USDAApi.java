@@ -15,6 +15,7 @@ import java.util.Arrays;
 //class for making API calls to USDA and retrieving data
 //Gets every micronutrient & Macronutrient and updates User Info based on that data
 public class USDAApi {
+    //This method adds the nutrition information for a specific food to a user object based on the FDIC ID
     public void addFoodById(int ID, User person) {
         StringBuilder nutrients = new StringBuilder();
         for (int nutrient : Arrays.asList((new Micros()).nutrientNumbers)) {
@@ -31,30 +32,34 @@ public class USDAApi {
         HttpResponse<String> response;
 
         Micros micros = new Micros();
-        //Parser test
+        //JSON Return Parser
         try {
                 response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-                System.out.println(response.body());
+                //FOR TESTING
+                //System.out.println(response.body());
                 JSONObject jsonObject = (JSONObject) new JSONParser().parse(response.body());
                 ;
-                System.out.println(jsonObject.get("foodNutrients"));
+                //FOR TESTING
+                //System.out.println(jsonObject.get("foodNutrients"));
                 JSONArray nestedObject = (JSONArray) jsonObject.get("foodNutrients");
 
                 for (int i = 0; i < nestedObject.size(); i++) {
                     JSONObject foodNutrient = (JSONObject) nestedObject.get(i);
                     int NutrientID = Integer.parseInt((foodNutrient.get("number").toString()));
-                    System.out.println(foodNutrient.get("name") + " " + foodNutrient.get("amount") + foodNutrient.get("unitName") + " " + NutrientID);
+                    //FOR TESTING
+                    //System.out.println(foodNutrient.get("name") + " " + foodNutrient.get("amount") + foodNutrient.get("unitName") + " " + NutrientID);
 
 
                     if (micros.getNutrientMap().get(NutrientID) != null) {
                         //System.out.println(micros.getNutrientMap().get(NutrientID));
-                        Micros.addMicrosbyNutrientID(NutrientID, micros, Double.parseDouble(foodNutrient.get("amount").toString()));
+                        double amount = Double.parseDouble(foodNutrient.get("amount").toString());
+                        Micros.addMicrosbyNutrientID(NutrientID, micros, amount);
                     }
-                    System.out.println();
+                    //System.out.println();
 
 
                 }
-                Micros.PrintAllMicros(micros);
+                person.updateMicros(micros);
 
 
 
@@ -71,7 +76,14 @@ public class USDAApi {
     public static void main(String[] args) {
         USDAApi api = new USDAApi();
         User x = new User();
-        api.addFoodById(1750342 ,x);
+        api.addFoodById(1750342,x);
+        System.out.println("Micros after food 1: ");
+        Micros.PrintAllMicros(x.getMicronutrientData());
+        System.out.println();
+        System.out.println("Micros after food 2: ");
+        api.addFoodById(2262074,x);
+        Micros.PrintAllMicros(x.getMicronutrientData());
+        System.out.println();
     }
 
 }

@@ -3,28 +3,30 @@ package com.calorieminder.calorieminder.Model;
 import java.util.*;
 
 //object for storing micronutrient values
-//ALL UNITS STORED IN MG
+//ALL UNITS STORED IN MG or UG, based on recommended daily intake from USDA
+
+
 public class Micros {
-    private double vitaminA;
-    private double vitaminB1;
-    private double vitaminB2;
-    private double vitaminB3;
-    private double vitaminB5;
-    private double vitaminB6;
-    private double vitaminB9;
-    private double vitaminB12;
-    private double vitaminC;
-    private double vitaminD;
-    private double vitaminE;
-    private double vitaminK;
-    private double calcium;
-    private double phosphorus;
-    private double magnesium;
-    private double iron;
-    private double zinc;
-    private double copper;
-    private double potassium;
-    private double sodium;
+    private double vitaminA = 0;
+    private double vitaminB1 = 0;
+    private double vitaminB2 = 0;
+    private double vitaminB3 = 0;
+    private double vitaminB5 = 0;
+    private double vitaminB6 = 0;
+    private double vitaminB9 = 0;
+    private double vitaminB12 = 0;
+    private double vitaminC = 0;
+    private double vitaminD = 0;
+    private double vitaminE = 0;
+    private double vitaminK = 0;
+    private double calcium = 0;
+    private double phosphorus = 0;
+    private double magnesium = 0;
+    private double iron = 0;
+    private double zinc = 0;
+    private double copper = 0;
+    private double potassium = 0;
+    private double sodium = 0;
 
     //USDA number corresponding to each nutrient for the API call
     public final Integer[] nutrientNumbers = {320,404,405,406,410,415,417,418,401,328,573,430,301,305,304,303,309,312,306,307};
@@ -33,6 +35,12 @@ public class Micros {
 
     public Map<Integer, String> getNutrientMap() {
         return Collections.unmodifiableMap(nutrientMap);
+    }
+
+    private final Map<String, Double> DailyGoal;
+
+    public Map<String, Double> DailyGoal() {
+        return Collections.unmodifiableMap(DailyGoal);
     }
 
     public Micros() {
@@ -58,7 +66,35 @@ public class Micros {
         nutrientMap.put(312,"copper");
         nutrientMap.put(306,"potassium");
 
+        DailyGoal = new HashMap<>();
+        DailyGoal.put("vitaminA", 900.0); //900 mcg (UG)
+        DailyGoal.put("vitaminB1", 1.2); //1.2 mg
+        DailyGoal.put("vitaminB2", 1.3); //1.3 mg
+        DailyGoal.put("vitaminB3", 16.0); //16 mg
+        DailyGoal.put("vitaminB5", 5.0); //5 mg
+        DailyGoal.put("vitaminB6", 1.7); //1.7 mg
+        DailyGoal.put("vitaminB9", 400.0); //400 mcg (UG)
+        DailyGoal.put("vitaminB12", 2.4); //2.4 mcg (UG)
+        DailyGoal.put("sodium", 1500.0); //1500 mg
+        DailyGoal.put("vitaminC", 90.0); //90 mg
+        DailyGoal.put("vitaminD", 20.0); //20 mcg (UG)
+        DailyGoal.put("vitaminE", 15.0); //15 mg
+        DailyGoal.put("vitaminK", 120.0); //120 mcg (UG)
+        DailyGoal.put("calcium", 1300.0); //1300 mg
+        DailyGoal.put("phosphorus", 1250.0); //1250 mg
+        DailyGoal.put("magnesium", 420.0); //420 mg
+        DailyGoal.put("iron", 18.0); //18 mg
+        DailyGoal.put("zinc", 11.0); //11 mg
+        DailyGoal.put("copper", 0.9); //0.9 mg
+        DailyGoal.put("potassium", 4700.0); //4700 mg
+
+
     }
+
+
+
+
+
 
     //increases micronutrient values by set amount based on nutrient specified
     public static void addMicrosbyNutrientID(int nutrientID, Micros micros, double amount) {

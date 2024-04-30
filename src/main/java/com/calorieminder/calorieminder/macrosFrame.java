@@ -97,11 +97,16 @@ public class macrosFrame extends HelloController {
             storeFats = user.getFatGrams();
         }
 
-        //BMI TEXT STORAGE
-            //storeBMI = *Get BMI Calculation Function*;
+        // Calculate BMI using BMIRCalculator
+        //BMIRCalculator bmirCalculator = new BMIRCalculator();
+       // storeBMI = bmirCalculator.calculateBMI(user.getWeight(), user.getHeight());
 
-        //BMR TEXT STORAGE
-            //storeBMR = *Get BMR Calculation Function*;
+        // Calculate BMR using BMIRCalculator
+       // if (user.getSex() == 'M' || user.getSex() == 'm') {
+       //     storeBMR = bmirCalculator.calculateBMRMen(user.getWeight(), user.getHeight(), user.getAge());
+      //  } else {
+       //     storeBMR = bmirCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge());
+       // }
 
         if(!WATERparse[1].isEmpty()){
             double waterLeft = Double.parseDouble(WATERparse[1]);
