@@ -120,8 +120,8 @@ public class macrosFrame extends HelloController {
         Carbs.setText(Cparse[0] + ": " + storeCarbs + "out of: " + deficiencyCalculator.getCarbs() + " (" + storeCarbs + "|" + deficiencyCalculator.getCarbs() + ")" + "Percentage Reached: " + carbsPercent + "%");
         double fatPercent = (storeFats/deficiencyCalculator.getFats()) * 100;
         Fat.setText(Fparse[0] + ": " + storeFats + "out of: " + deficiencyCalculator.getFats() + " (" + storeFats + "|" + deficiencyCalculator.getFats() + ")" + "Percentage Reached: " + fatPercent + "%");
-        BMI.setText(BIparse[0] + ": " + storeBMI);
-        BMR.setText(BRparse[0] + ": " + storeBMR);
+        //BMI.setText(BIparse[0] + ": " + storeBMI);
+        //BMR.setText(BRparse[0] + ": " + storeBMR);
         WaterLeft.setText(WATERparse[0] + ": " + storeWaterLeft);
     }
 }

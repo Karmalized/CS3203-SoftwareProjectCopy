@@ -72,18 +72,39 @@ public class USDAApi {
         return;
     }
 
+    public JSONObject getFoodsByName(String food) {
+
+        //remove illegal characters
+        food = food.replaceAll("[^a-zA-Z\\s]", "");
+        food = food.replaceAll(" ","%20");
+        HttpRequest request = HttpRequest.newBuilder()
+                //  'https://api.nal.usda.gov/fdc/v1/foods/search?query=Cheddar%20Cheese&dataType=Foundation,SR%20Legacy&pageSize=5&pageNumber=1&api_key=DEMO_KEY' \
+                .uri(URI.create("https://api.nal.usda.gov/fdc/v1/foods/search?query=" + food + "?&dataType=Foundation,SR%20Legacy&pageSize=5&pageNumber=1&api_key=DEMO_KEY"))
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+
+        HttpResponse<String> response;
+        try {
+            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            JSONObject jsonObject = (JSONObject) new JSONParser().parse(response.body());
+            System.out.println("Total Hits: " + jsonObject.get("totalHits").toString());
+            System.out.println(response.body());
+            return jsonObject;
+        }
+        catch (InterruptedException | IOException | ParseException e) {
+            e.printStackTrace();
+        }
+        return new JSONObject();
+    }
+
      //FOR TESTING
     public static void main(String[] args) {
         USDAApi api = new USDAApi();
         User x = new User();
         api.addFoodById(1750342,x);
-        System.out.println("Micros after food 1: ");
-        Micros.PrintAllMicros(x.getMicronutrientData());
-        System.out.println();
-        System.out.println("Micros after food 2: ");
         api.addFoodById(2262074,x);
-        Micros.PrintAllMicros(x.getMicronutrientData());
-        System.out.println();
+
+        api.getFoodsByName("Cheddar Cheese*(+=-!~~|");
     }
 
 }
