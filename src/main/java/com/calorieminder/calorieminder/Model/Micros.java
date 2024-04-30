@@ -39,7 +39,7 @@ public class Micros {
 
     private final Map<String, Double> DailyGoal;
 
-    public Map<String, Double> DailyGoal() {
+    public Map<String, Double> getDailyGoal() {
         return Collections.unmodifiableMap(DailyGoal);
     }
 
