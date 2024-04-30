@@ -115,7 +115,7 @@ public class  welcomeFrame extends HelloController {
         newUser.setSex(sexChar);
 
         DeficiencyCalculator newUserCalc = new DeficiencyCalculator();
-        newUserCalc.calculateTDEE(newUser.getWeight(), newUser.getHeight(), /*newUser.getBirthday() == NEEDS CONVERSION*/, newUser.getSex(), newUser.getActivityLevel());
+        newUserCalc.calculateTDEE(newUser.getWeight(), newUser.getHeight(), newUser.getAge(), newUser.getSex(), newUser.getActivityLevel());
     }
 
     @Override //SUPERCLASS CALL FOR TRANSITIONS
