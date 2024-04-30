@@ -29,15 +29,21 @@ public class USDAApi {
         HttpResponse<String> response;
 
 
+        //Parser test
         try {
             response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body());
             JSONObject jsonObject = (JSONObject) new JSONParser().parse(response.body());;
-            System.out.println(jsonObject.get("name"));
+            System.out.println(jsonObject.get("description"));
+            System.out.println(jsonObject.get("foodNutrients"));
+            String Nutrients = jsonObject.get("foodNutrients").toString();
+
+
         } catch (IOException | InterruptedException | ParseException e) {
             e.printStackTrace();
         }
-        //TODO parse JSON response to extract micronutrient values (https://code.google.com/archive/p/json-simple/)
+
+
 
         return new Micros();
     }
