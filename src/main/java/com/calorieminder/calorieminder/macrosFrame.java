@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class macrosFrame extends HelloController {
-    private User user;
     private DeficiencyCalculator deficiencyCalculator;
 
     //ONPAGE VARIABLES
@@ -56,7 +55,16 @@ public class macrosFrame extends HelloController {
     protected void moveToWeightTrendPage(ActionEvent event) throws IOException {
         super.moveToWeightTrendPage(event);
     }
+    @FXML
+    private void initialize() {
+    Protein.setText("Protein: " + user.getProteinGrams() + " g");
+    Carbs.setText("Carbs: " + user.getCarbGrams() + " g");
+    Fat.setText("Fat: " + user.getFatGrams() + " g");
+    BMI.setText("BMI: " + String.valueOf(BMIRCalculator.calculateBMI(user.getHeight()*0.0254,user.getWeight())));
 
+    }
+
+/*
     public void presetBMIR(User user){
         // Calculate BMI using BMIRCalculator
         BMIRCalculator bmirCalculator = new BMIRCalculator();
@@ -71,6 +79,8 @@ public class macrosFrame extends HelloController {
              BMR.setText(bmr + bmirCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge()));
          }
     }
+
+
 
     //NOTE: USER CLASS IN THIS FUNCTION TBD (Probably going to be replaced with a Macros File)
     //THIS CLASS WILL BE USED IN TANDEM WHEN THE ADD BUTTON FUNCTION IS IMPLEMENTED
@@ -147,4 +157,6 @@ public class macrosFrame extends HelloController {
         BMR.setText(BRparse[0] + ": ");
         WaterLeft.setText(WATERparse[0] + ": " + storeWaterLeft);
     }
+    */
 }
+

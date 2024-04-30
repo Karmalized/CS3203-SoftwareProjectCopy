@@ -7,28 +7,28 @@ import java.text.DateFormat;
 //This class stores all relevant user data for the app (in the scope of 1 day)
 public class User {
     //stores every micronutrient for the user
-    private Micros micronutrientData = new Micros();
+    private Micros micronutrientData;
 
     //stores an array containing Month, Day, Year of birthday
     private int[] Birthday = {1,1,1999};
 
     //weight of the user in pounds
-    private double weight = 0;
+    private double weight;
 
     //height of the user in inches
-    private double height = 0;
+    private double height;
 
     //contains the sex of the user (either M or F)
-    private char sex = 'M';
+    private char sex;
 
     //contains the activity level of the user from 1 to 5
-    private int ActivityLevel = 1;
+    private int ActivityLevel;
 
     //calories that the user burns without moving
-    private double BMR = 0;
+    private double BMR;
 
     //Body Mass Index of the User
-    private double BMI = 0;
+    private double BMI;
 
 
     //Macronutrient intake of the User
@@ -38,6 +38,24 @@ public class User {
 
     //water intake of the user in milliliters
     private double waterML = 0;
+
+    //Empty Constructor
+    public User() {
+        micronutrientData = new Micros();
+        weight = 0;
+        height = 0;
+        sex = 'M';
+        ActivityLevel = 1;
+        BMR = 0;
+        BMI = 0;
+        proteinGrams = 0;
+        carbGrams = 0;
+        fatGrams = 0;
+        waterML = 0;
+
+
+
+    }
 
     public void setMicronutrientData(Micros micronutrientData) {
         this.micronutrientData = micronutrientData;
