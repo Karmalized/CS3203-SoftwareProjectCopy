@@ -1,5 +1,10 @@
 package com.calorieminder.calorieminder.Model;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -24,13 +29,31 @@ public class USDAApi {
 
         HttpResponse<String> response;
 
-        //TODO parse JSON response to extract micronutrient values (https://code.google.com/archive/p/json-simple/)
+
+        //Parser test
         try {
-            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
-        } catch (IOException | InterruptedException e) {
+                response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+                System.out.println(response.body());
+                JSONObject jsonObject = (JSONObject) new JSONParser().parse(response.body());
+                ;
+                System.out.println(jsonObject.get("foodNutrients"));
+                JSONArray nestedObject = (JSONArray) jsonObject.get("foodNutrients");
+
+                for (int i = 0; i < nestedObject.size(); i++) {
+                    JSONObject foodNutrient = (JSONObject) nestedObject.get(i);
+                    System.out.println(foodNutrient.get("name") + " " + foodNutrient.get("amount") + foodNutrient.get("unitName"));
+                    System.out.println();
+
+                }
+
+
+
+        } catch (IOException | InterruptedException | ParseException e) {
             e.printStackTrace();
         }
+
+
+
         return new Micros();
     }
 

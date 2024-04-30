@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calorieminder.calorieminder.HelloController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calorieminder.calorieminder.microsFrame">
    <children>
-      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin A (mcg): " />
-      <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B1 (mcg): " />
-      <Text layoutX="14.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sodium (mg): " />
-      <Text layoutX="14.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Potassium (mg): " />
-      <Text layoutX="14.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copper (mcg): " />
-      <Text layoutX="14.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zinc (mg): " />
-      <Text layoutX="14.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iron (mg): " />
-      <Text layoutX="14.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Magnesium (mg): " />
-      <Text layoutX="14.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phosphorus (mg): " />
-      <Text layoutX="14.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calcium (mg): " />
-      <Text layoutX="14.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin K (mcg): " />
-      <Text layoutX="14.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin E (mg): " />
-      <Text layoutX="14.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin D (mcg): " />
-      <Text layoutX="14.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin C (mg): " />
-      <Text layoutX="14.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B12 (mcg): " />
-      <Text layoutX="14.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B9 (mcg): " />
-      <Text layoutX="14.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B6 (mcg): " />
-      <Text layoutX="14.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B5 (mcg): " />
-      <Text layoutX="14.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B3 (Niacin) (mcg): " />
-      <Text layoutX="14.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B2 (mcg): " />
+      <Text fx:id="A" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin A (mcg): " />
+      <Text fx:id="B1" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B1 (mcg): " />
+      <Text fx:id="Sodium" layoutX="14.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sodium (mg): " />
+      <Text fx:id="Potassium" layoutX="14.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Potassium (mg): " />
+      <Text fx:id="Copper" layoutX="14.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copper (mcg): " />
+      <Text fx:id="Zinc" layoutX="14.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zinc (mg): " />
+      <Text fx:id="Iron" layoutX="14.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iron (mg): " />
+      <Text fx:id="Magnesium" layoutX="14.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Magnesium (mg): " />
+      <Text fx:id="Phosphorus" layoutX="14.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phosphorus (mg): " />
+      <Text fx:id="Calcium" layoutX="14.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calcium (mg): " />
+      <Text fx:id="K" layoutX="14.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin K (mcg): " />
+      <Text fx:id="E" layoutX="14.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin E (mg): " />
+      <Text fx:id="D" layoutX="14.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin D (mcg): " />
+      <Text fx:id="C" layoutX="14.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin C (mg): " />
+      <Text fx:id="B12" layoutX="14.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B12 (mcg): " />
+      <Text fx:id="B9" layoutX="14.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B9 (mcg): " />
+      <Text fx:id="B6" layoutX="14.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B6 (mcg): " />
+      <Text fx:id="B5" layoutX="14.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B5 (mcg): " />
+      <Text fx:id="B3" layoutX="14.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B3 (Niacin) (mcg): " />
+      <Text fx:id="B2" layoutX="14.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vitamin B2 (mcg): " />
       <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#moveToMainPage" text="Back" />
-      <Label layoutX="398.0" layoutY="87.0" text="f" />
       <Text layoutX="154.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text layoutX="154.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text layoutX="154.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" />
