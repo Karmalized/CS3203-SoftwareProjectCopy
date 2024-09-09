@@ -29,7 +29,7 @@ public class USDAApi {
         nutrients = new StringBuilder(nutrients.substring(0, nutrients.length() - 1));
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api.nal.usda.gov/fdc/v1/food/" + ID + "?api_key=DEMO_KEY&nutrients=203,204,205," + nutrients + "&format=abridged"))
+                .uri(URI.create("https://api.nal.usda.gov/fdc/v1/food/" + ID + "?api_key=[INSERT_KEY]&nutrients=203,204,205," + nutrients + "&format=abridged"))
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
 
@@ -115,7 +115,7 @@ public class USDAApi {
         food = food.replaceAll(" ","%20");
         HttpRequest request = HttpRequest.newBuilder()
                 //  'https://api.nal.usda.gov/fdc/v1/foods/search?query=Cheddar%20Cheese&dataType=Foundation,SR%20Legacy&pageSize=5&pageNumber=1&api_key=DEMO_KEY' \
-                .uri(URI.create("https://api.nal.usda.gov/fdc/v1/foods/search?query=" + food + "?&dataType=Foundation,SR%20Legacy&pageSize=5&pageNumber=1&api_key=DEMO_KEY"))
+                .uri(URI.create("https://api.nal.usda.gov/fdc/v1/foods/search?query=" + food + "&dataType=Foundation,SR%20Legacy&pageSize=5&pageNumber=1&api_key=[INSERT_KEY]"))
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
 

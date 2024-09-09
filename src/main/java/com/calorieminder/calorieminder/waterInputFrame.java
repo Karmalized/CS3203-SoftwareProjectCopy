@@ -35,6 +35,7 @@ public class waterInputFrame extends HelloController {
         String consumedString = waterBox.getText();
         float consumed = Float.parseFloat(consumedString);
         Water water = new Water();
+        water.updateWaterConsumed(0,"mL");
         water.updateWaterConsumed(consumed, unitSelector.getValue());
         user.setWaterML(water.getWaterConsumed());
         this.moveToMainPage(event);

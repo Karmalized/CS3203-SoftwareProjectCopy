@@ -3,6 +3,7 @@ package com.calorieminder.calorieminder;
 import com.calorieminder.calorieminder.Model.BMIRCalculator;
 import com.calorieminder.calorieminder.Model.DeficiencyCalculator;
 import com.calorieminder.calorieminder.Model.User;
+import com.calorieminder.calorieminder.Model.Water;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +19,8 @@ public class macrosFrame extends HelloController {
 
     //ONPAGE VARIABLES
     @FXML
+    private Text Calories;
+    @FXML
     private Text Protein;
     @FXML
     private Text Carbs;
@@ -28,7 +31,7 @@ public class macrosFrame extends HelloController {
     @FXML
     private Text BMR;
     @FXML
-    private Text WaterLeft;
+    private Text WaterIntake;
 
     //SUPERCLASS CALLS FOR TRANSITION PAGES (BUTTONS)
     @Override
@@ -57,16 +60,19 @@ public class macrosFrame extends HelloController {
     }
     @FXML
     private void initialize() {
-    Protein.setText("Protein: " + user.getProteinGrams() + " g");
-    Carbs.setText("Carbs: " + user.getCarbGrams() + " g");
-    Fat.setText("Fat: " + user.getFatGrams() + " g");
-    BMI.setText("BMI: " + String.format("%.2f",BMIRCalculator.calculateBMI(user.getWeight(),user.getHeight())));
+        Protein.setText("Protein: " + user.getProteinGrams() + " g");
+        Carbs.setText("Carbs: " + user.getCarbGrams() + " g");
+        Fat.setText("Fat: " + user.getFatGrams() + " g");
+        BMI.setText("BMI: " + String.format("%.2f", BMIRCalculator.calculateBMI(user.getWeight(), user.getHeight())));
+        Calories.setText("Calories: " + String.format("%.2f", 4*user.getCarbGrams()+4*user.getProteinGrams()+9*user.getFatGrams()));
         if (user.getSex() == 'M' || user.getSex() == 'm') {
-            BMR.setText("BMR: " + BMIRCalculator.calculateBMRMen(user.getWeight(), user.getHeight(), user.getAge()));
+            BMR.setText("BMR: " + String.format("%.2f", BMIRCalculator.calculateBMRMen(user.getWeight(), user.getHeight(), user.getAge())));
         } else {
-            BMR.setText("BMR: " + BMIRCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge()));
+            BMR.setText("BMR: " + String.format("%.2f",BMIRCalculator.calculateBMRWomen(user.getWeight(), user.getHeight(), user.getAge())));
         }
+        WaterIntake.setText("Water Intake: " + String.format("%.2f",user.getWaterML()) + " mL");
     }
+
 
 /*
     public void presetBMIR(User user){
