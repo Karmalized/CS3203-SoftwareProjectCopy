@@ -44,17 +44,18 @@ public class User {
     //Empty Constructor
     public User() {
         micronutrientData = new Micros();
+        weightList.add(0.0);
         weight = 0;
         height = 0;
         sex = 'M';
         ActivityLevel = 1;
         BMR = 0;
         BMI = 0;
+        Age = 0;
         proteinGrams = 0;
         carbGrams = 0;
         fatGrams = 0;
         waterML = 0;
-        Age = 0;
 
 
     }
@@ -123,6 +124,22 @@ public class User {
     public void setWaterML(double waterML) {
         this.waterML = waterML;
     }
+
+    public void setBMI(double bmi){
+        this.BMI = bmi;
+    };
+
+    public double getBMI(){
+        return BMI;
+    }
+    public void setBMR(double bmr){
+        this.BMR = bmr;
+    };
+
+    public double getBMR(){
+        return BMR;
+    }
+
     public double getAge(){return Age;}
     //this method adds the micros from a new micros object to the current user's total micros
     public void updateMicros(Micros micronutrientData) {

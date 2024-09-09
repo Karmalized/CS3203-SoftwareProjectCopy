@@ -41,14 +41,14 @@ public class nutritionBuildFile {
     System.out.println("23. Chloride\n"); //list of vitamins
     System.out.print("Select a number corresponding to desired nutrient to input: "); //select a nutrient number to manipulate, more changes will be added later
     lineData = takeInput.nextInt(); //takes the input given by the system/user
-    while(lineData >= 23 || lineData <= 0){ //if the input isn't within the column values, reprompt until column selected
+    while(lineData >= 23 || lineData <= 0){ //if the input isn't within the column values, re-prompt until column selected
         System.out.println("not a valid selection! Enter valid nutrient number!\n");
         System.out.print("Select a number corresponding to desired nutrient to input: ");
         lineData = takeInput.nextInt();
     }
     System.out.print("Enter data to append: "); //enter data to append to the section
     informationData = takeInput.nextInt(); //takes the data input for the selected nutrient
-    while(informationData <= 0){ //if the number is unreasonable, reprompt
+    while(informationData <= 0){ //if the number is unreasonable, re-prompt
         System.out.println("not a valid selection! Enter valid nutrient data amount!\n");
         System.out.print("Enter data to append: ");
         informationData = takeInput.nextInt();
@@ -113,7 +113,7 @@ public class nutritionBuildFile {
             lines.add(lData-1, newData);
             lineParser.close();
         } else {
-            System.out.println("Invalid Row Number!"); //if theres an issue with the number selection then throw this line
+            System.out.println("Invalid Row Number!"); //if there's an issue with the number selection then throw this line
         }
         // Write modified lines back to the file
         FileWriter writeOut = new FileWriter(f);
