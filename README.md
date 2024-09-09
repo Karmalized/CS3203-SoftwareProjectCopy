@@ -1,3 +1,6 @@
+## Note
+Software Engineering Project Application created with my group to learn the fundamentals of software development and software design techniques to establish effective development processes. This is a defunct project and incorporates API-Keys which are invalid and inactive so any search features implemented in this prototype project will be unusable.
+
 ## CalorieMinder
 
 CalorieMinder is a health and fitness application designed to help users track their caloric and nutrient intake. Whether you're trying to lose weight, gain muscle, or simply maintain a healthy lifestyle, CalorieMinder provides you with the tools you need to monitor your dietary habits and make informed decisions about your nutrition.
